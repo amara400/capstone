@@ -1,0 +1,21 @@
+Capstone UI Plan
+We will use Javascript and React to create a front-end for our web application. The front-end will get information from the endpoints of our Java API. All pages on our web app will have a navbar at the top that routes to pages and will change based on  log-in status.
+Home/Dashboard
+Beacuse all users (including non-authenticated) will have access to the interactive dashboard, we have chosen implement the dashboard on the home page of our web application. The dashboard will be in the center and take up most of the space on the page. A navbar will located at the top that routes to Home, About, Contact, and Login pages.
+About
+This will be a simple plain text page explaining how our web app is intended to be used.
+Contact
+This will be another plain text page explaining how to contact the developers when something inevitably goes wrong.
+Login
+This will be a standard login page with two inputs for username and password, and a submit button. Upon successful login a message will be displayed.
+Favorites List
+This will be a hidden page that is only displayed in the navbar for authenticated users and administrators. Page 1 allows users to view a list of their favorite movies and remove title using adjacent Remove buttons. At the bottom of the page will be a Add More Titles to List button that routes to a secondary page listing all movies in the database with check boxes next to them. Checking boxes and hitting the submit button will add these titles to their favorites and route back to the favorites list page.
+Alter Database
+This will be another hidden page available to administartors only. This acts as a basic CRUD application allowing administrators to add, update, and delete information in the MySQL database. The primary page will display information from Movie table with column titles at the top. Each row will have a checklist box in front of it that allows for editing/deleting. There will be buttons at the bottom for View Directors, View Producers, View Cast, View Genres, Edit, and Delete. All of these buttons will route to secondary pages displaying similar CRUD applications allowing the admistrator to view and edit specific information. We chose this approach because director/producer/cast/genre data have many-to-one relationships with movies and are stored in separate tables. 
+
+
+
+
+
+
+
