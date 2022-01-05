@@ -24,11 +24,13 @@ class MovieJdbcTemplateRepositoryTest {
     void setup() {knownGoodState.set();}
 
     @Test
-    void findById() {
+    void should_findById() {
+        Movie hulk = repository.findById(2);
+        assertEquals("The Incredible Hulk", hulk.getTitle());
     }
 
     @Test
-    void findAll() {
+    void should_findAll() {
     }
 
     @Test
