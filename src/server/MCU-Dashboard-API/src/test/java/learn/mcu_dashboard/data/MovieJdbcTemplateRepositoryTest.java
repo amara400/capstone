@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -25,24 +26,77 @@ class MovieJdbcTemplateRepositoryTest {
 
     @Test
     void should_findById() {
+        Movie testHulk = new Movie(2, "The Incredible Hulk", LocalDate.of(2008, 6, 13),
+                112, 6.6f, 61,
+                new BigDecimal(150000000), new BigDecimal(134806913),
+                new BigDecimal(264770996), new BigDecimal(55414050),
+                0, 0, "The Hulk");
         Movie hulk = repository.findById(2);
         assertEquals("The Incredible Hulk", hulk.getTitle());
+        assertEquals(testHulk, hulk);
+
+        Movie actual = repository.findById(300);
+        assertEquals(null, actual);
     }
 
     @Test
     void should_findAll() {
+        List<Movie> movies = repository.findAll();
+
+        assertNotNull(movies);
+        assertTrue(movies.size() >= 3);
+
+        Movie testHulk = new Movie(2, "The Incredible Hulk", LocalDate.of(2008, 6, 13),
+                112, 6.6f, 61,
+                new BigDecimal(150000000), new BigDecimal(134806913),
+                new BigDecimal(264770996), new BigDecimal(55414050),
+                0, 0, "The Hulk");
+        assertTrue(movies.contains(testHulk) &&
+                movies.stream().anyMatch(i -> i.getIdMovie() == 3));
+
     }
 
     @Test
-    void add() {
+    void shouldAdd() {
+        Movie suicide = makeMovie();
+
+        Movie actual = repository.add(suicide);
+        suicide.setIdMovie(5);
+
+        assertNotNull(actual);
+        assertEquals(suicide, actual);
     }
 
     @Test
-    void update() {
+    void shouldUpdateExisting() {
+        Movie ironMan = new Movie(1, "Iron Man 3", LocalDate.of(2013, 5, 3),
+                130, 7.1f, 62,
+                new BigDecimal(200000000), new BigDecimal(408992272),
+                new BigDecimal(1214811252), new BigDecimal(174144585),
+                1, 0, "Iron Man");
+
+        assertTrue(repository.update(ironMan));
+        assertEquals(ironMan, repository.findById(1));
     }
 
     @Test
-    void deleteById() {
+    void shouldNotUpdateMissing(){
+        Movie testHulk = new Movie(200, "The Incredible Hulk", LocalDate.of(2008, 6, 13),
+                112, 6.6f, 61,
+                new BigDecimal(150000000), new BigDecimal(134806913),
+                new BigDecimal(264770996), new BigDecimal(55414050),
+                0, 0, "The Hulk");
+        assertFalse(repository.update(testHulk));
+    }
+
+    @Test
+    void shouldDeleteByIdExisting() {
+        assertTrue(repository.deleteById(4));
+    }
+
+    @Test
+    void shouldNotDeleteByIdMissing() {
+        assertFalse(repository.deleteById(400));
     }
 
     private Movie makeMovie() {

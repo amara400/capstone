@@ -2,6 +2,7 @@ package learn.mcu_dashboard.models;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.Objects;
 
 public class Movie {
 
@@ -146,5 +147,32 @@ public class Movie {
 
     public void setFranchise(String franchise) {
         this.franchise = franchise;
+    }
+
+//    public Movie(int idMovie, String title, LocalDate usReleaseDate,
+//                 int runtime, float imdbRating, int metascore,
+//                 BigDecimal budget, BigDecimal domesticGross,
+//                 BigDecimal totalGross, BigDecimal openingGross,
+//                 int oscarNominations, int oscarsWon, String franchise)
+
+
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Movie that = (Movie) o;
+        return idMovie == that.idMovie &&
+                Objects.equals(title, that.title) &&
+                Objects.equals(UsReleaseDate, that.UsReleaseDate) &&
+                runtime == that.runtime &&
+                ImdbRating == that.ImdbRating &&
+                metascore == that.metascore &&
+                Objects.equals(budget, that.budget) &&
+                Objects.equals(domesticGross, that.domesticGross) &&
+                Objects.equals(totalGross, that.totalGross) &&
+                Objects.equals(openingGross, that.openingGross) &&
+                oscarNominations == that.oscarNominations &&
+                oscarsWon == that.oscarsWon &&
+                Objects.equals(franchise, that.franchise);
     }
 }
