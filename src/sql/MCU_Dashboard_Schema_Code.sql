@@ -24,11 +24,11 @@ CREATE TABLE IF NOT EXISTS `MCU_Dashboard`.`Movie` (
   `title` VARCHAR(45) NOT NULL,
   `UsReleaseDate` DATE NOT NULL,
   `runtime` INT NOT NULL,
-  `ImdbRating` DECIMAL NULL,
+  `ImdbRating` DECIMAL(2,1) NULL,
   `metascore` INT NULL,
   `budget` BIGINT(8) NULL,
   `domesticGross` BIGINT(8) NULL,
-  `totalGross` BIGINT(8) NULL,
+  `totalGross` BIGINT(16) NULL,
   `openingGross` BIGINT(8) NULL,
   `oscarNominations` INT NULL,
   `oscarsWon` INT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `MCU_Dashboard`.`Movie_Genre` (
   `idMovie` INT NOT NULL,
   `idGenre` INT NOT NULL,
   INDEX `fk_Movie/Genre_Movie1_idx` (`idMovie` ASC) VISIBLE,
-  PRIMARY KEY (`idGenre`),
+  PRIMARY KEY (`idMovie`,`idGenre`),
   CONSTRAINT `fk_Movie/Genre_Movie1`
     FOREIGN KEY (`idMovie`)
     REFERENCES `MCU_Dashboard`.`Movie` (`idMovie`)
@@ -79,7 +79,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `MCU_Dashboard`.`Person` ;
 
 CREATE TABLE IF NOT EXISTS `MCU_Dashboard`.`Person` (
-  `idPerson` INT NOT NULL,
+  `idPerson` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idPerson`))
 ENGINE = InnoDB;
@@ -94,7 +94,7 @@ CREATE TABLE IF NOT EXISTS `MCU_Dashboard`.`Movie_Person` (
   `idMovie` INT NOT NULL,
   `idPerson` INT NOT NULL,
   INDEX `fk_Movie/Person_Movie1_idx` (`idMovie` ASC) VISIBLE,
-  PRIMARY KEY (`idPerson`),
+  PRIMARY KEY (`idMovie`, `idPerson`),
   CONSTRAINT `fk_Movie/Person_Movie1`
     FOREIGN KEY (`idMovie`)
     REFERENCES `MCU_Dashboard`.`Movie` (`idMovie`)
@@ -114,7 +114,7 @@ ENGINE = InnoDB;
 DROP TABLE IF EXISTS `MCU_Dashboard`.`Role` ;
 
 CREATE TABLE IF NOT EXISTS `MCU_Dashboard`.`Role` (
-  `idRole` INT NOT NULL,
+  `idRole` INT NOT NULL AUTO_INCREMENT,
   `role` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idRole`))
 ENGINE = InnoDB;
