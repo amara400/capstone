@@ -25,7 +25,7 @@ public class MovieJdbcTemplateRepository implements MovieRepository {
     public Movie findById(int idMovie) {
 
         final String sql = "select idMovie, title, UsReleaseDate, runtime, ImdbRating, metascore, budget, " +
-                "domesticGross, totalGross, openingGross, oscarNominations, oscarWins, oscarsWon, franchise " +
+                "domesticGross, totalGross, openingGross, oscarNominations, oscarsWon, franchise " +
                 "from Movie " +
                 "where idMovie = ?;";
 
@@ -38,7 +38,7 @@ public class MovieJdbcTemplateRepository implements MovieRepository {
     @Override
     public List<Movie> findAll() {
         final String sql = "select idMovie, title, UsReleaseDate, runtime, ImdbRating, metascore, budget, " +
-                "domesticGross, totalGross, openingGross, oscarNominations, oscarWins, oscarsWon, franchise " +
+                "domesticGross, totalGross, openingGross, oscarNominations, oscarsWon, franchise " +
                 "from Movie;";
         return jdbcTemplate.query(sql, new MovieMapper());
     }
@@ -46,8 +46,9 @@ public class MovieJdbcTemplateRepository implements MovieRepository {
     @Override
     public Movie add(Movie movie) {
 
-        final String sql = "insert into movie (title, UsReleaseDate, runtime, ImdbRating, metascore, budget, domesticGross, totalGross, openingGross, oscarNominations, oscarWins, oscarsWon, franchise) " +
-                "values (?,?,?,?,?,?,?,?,?,?,?,?,?);";
+        final String sql = "insert into Movie (title, UsReleaseDate, runtime, ImdbRating, metascore, budget, " +
+                "domesticGross, totalGross, openingGross, oscarNominations, oscarsWon, franchise) " +
+                "values (?,?,?,?,?,?,?,?,?,?,?,?);";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int rowsAffected = jdbcTemplate.update(connection -> {
@@ -59,12 +60,11 @@ public class MovieJdbcTemplateRepository implements MovieRepository {
             ps.setInt(5, movie.getMetascore());
             ps.setBigDecimal(6, movie.getBudget());
             ps.setBigDecimal(7, movie.getDomesticGross());
-            ps.setBigDecimal(8, movie.getOpeningGross());
-            ps.setBigDecimal(9, movie.getTotalGross());
-            ps.setBigDecimal(10, movie.getOpeningGross());
-            ps.setInt(11, movie.getOscarNominations());
-            ps.setInt(12, movie.getOscarsWon());
-            ps.setString(13, movie.getFranchise());
+            ps.setBigDecimal(8, movie.getTotalGross());
+            ps.setBigDecimal(9, movie.getOpeningGross());
+            ps.setInt(10, movie.getOscarNominations());
+            ps.setInt(11, movie.getOscarsWon());
+            ps.setString(12, movie.getFranchise());
             return ps;
         }, keyHolder);
 
@@ -91,11 +91,12 @@ public class MovieJdbcTemplateRepository implements MovieRepository {
                 "openingGross = ?, " +
                 "oscarNominations = ?, " +
                 "oscarsWon = ?, " +
-                "franchise = ?, " +
+                "franchise = ? " +
                 "where idMovie = ?;";
 
         return jdbcTemplate.update(sql,
                 movie.getTitle(),
+                movie.getUsReleaseDate(),
                 movie.getRuntime(),
                 movie.getImdbRating(),
                 movie.getMetascore(),
@@ -105,7 +106,8 @@ public class MovieJdbcTemplateRepository implements MovieRepository {
                 movie.getOpeningGross(),
                 movie.getOscarNominations(),
                 movie.getOscarsWon(),
-                movie.getFranchise()) > 0;
+                movie.getFranchise(),
+                movie.getIdMovie()) > 0;
     }
 
     @Override
