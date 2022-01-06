@@ -6,9 +6,9 @@ const AddMovie = props => {
     const intialFormState = {
         idMovie: null,
         title: '',
-        UsReleaseDate: '',
+        usReleaseDate: '',
         runtime: '',
-        ImdbRating: '',
+        imdbRating: '',
         metascore: '',
         budget: '',
         domesticGross: '',
@@ -33,9 +33,9 @@ const AddMovie = props => {
             const marvelMovie = {
                 "idMovie": 0,
                 "title": movie.title,
-                "UsReleaseDate": movie.UsReleaseDate,
+                "usReleaseDate": movie.usReleaseDate,
                 "runtime": movie.runtime,
-                "ImdbRating": movie.ImdbRating,
+                "imdbRating": movie.imdbRating,
                 "metascore": movie.metascore,
                 "budget": movie.budget,
                 "domesticGross": movie.domesticGross,
@@ -83,8 +83,8 @@ const AddMovie = props => {
                 <input
                     type="date"
                     class="form-control"
-                    name="UsReleaseDate"
-                    value={movie.UsReleaseDate}
+                    name="usReleaseDate"
+                    value={movie.usReleaseDate}
                     onChange={handleInputChange}
                     placeholder="Movie US Release Date"
                     required/>
@@ -103,8 +103,8 @@ const AddMovie = props => {
                 <input
                     type="text"
                     class="form-control"
-                    name="ImdbRating"
-                    value={movie.ImdbRating}
+                    name="imdbRating"
+                    value={movie.imdbRating}
                     onChange={handleInputChange}
                     placeholder="Movie IMDB Rating"
                     required/>
@@ -134,7 +134,7 @@ const AddMovie = props => {
                     type="text"
                     class="form-control"
                     name="domesticGross"
-                    value={movie.title}
+                    value={movie.domesticGross}
                     onChange={handleInputChange}
                     placeholder="Movie Domestic Gross"
                     required/>

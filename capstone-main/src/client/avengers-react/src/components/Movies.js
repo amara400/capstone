@@ -9,10 +9,10 @@ import { useEffect } from 'react';
 
 function Movies(){
     const dataMovie = [
-      {idMovie: 1, title: 'Safe', UsReleaseDate: 'Hoops', runtime: 'Haven', ImdbRating: '1998-09-19', metascore: '69', budget: '69', domesticGross: '69', totalGross: '69', openingGross: '69', oscarNominations: '69', oscarsWon: '69', franchise: '69'},
-      {idMovie: 1, title: 'Safe', UsReleaseDate: 'Hoops', runtime: 'Haven', ImdbRating: '1998-09-19', metascore: '69', budget: '69', domesticGross: '69', totalGross: '69', openingGross: '69', oscarNominations: '69', oscarsWon: '69', franchise: '69'},
+      {idMovie: 1, title: 'Safe', usReleaseDate: 'Hoops', runtime: 'Haven', imdbRating: '1998-09-19', metascore: '69', budget: '69', domesticGross: '69', totalGross: '69', openingGross: '69', oscarNominations: '69', oscarsWon: '69', franchise: '69'},
+      {idMovie: 1, title: 'Safe', usReleaseDate: 'Hoops', runtime: 'Haven', imdbRating: '1998-09-19', metascore: '69', budget: '69', domesticGross: '69', totalGross: '69', openingGross: '69', oscarNominations: '69', oscarsWon: '69', franchise: '69'},
   ];
-  const intialFormState = { idMovie: null, title: '', UsReleaseDate: '', runtime: '', ImdbRating: '', metascore: '', budget: '', domesticGross: '', totalGross: '', openingGross: '', oscarNominations: '', oscarsWon: '', franchise: ''};
+  const intialFormState = { idMovie: null, title: '', usReleaseDate: '', runtime: '', imdbRating: '', metascore: '', budget: '', domesticGross: '', totalGross: '', openingGross: '', oscarNominations: '', oscarsWon: '', franchise: ''};
   const [ movies, setMovies ] = useState(dataMovie);
   const [ editing, setEditing ] = useState(false);
   const [ currentMovie, setCurrentMovie ] = useState(intialFormState);
@@ -36,9 +36,9 @@ function Movies(){
     const movie = {
       "idMovie": 0,
       "title": event.title,
-      "UsReleaseDate": event.UsReleaseDate,
+      "usReleaseDate": event.usReleaseDate,
       "runtime": event.runtime,
-      "ImdbRating": event.ImdbRating,
+      "imdbRating": event.imdbRating,
       "metascore": event.metascore,
       "budget": event.budget,
       "domesticGross": event.domesticGross,
@@ -48,6 +48,8 @@ function Movies(){
       "oscarsWon": event.oscarsWon,
       "franchise": event.franchise
     };
+
+
   
     const init = {
       method: "POST",
@@ -89,9 +91,9 @@ function Movies(){
     const editedMovie = {
         "idMovie": 0,
         "title": event.title,
-        "UsReleaseDate": event.UsReleaseDate,
+        "usReleaseDate": event.usReleaseDate,
         "runtime": event.runtime,
-        "ImdbRating": event.ImdbRating,
+        "imdbRating": event.imdbRating,
         "metascore": event.metascore,
         "budget": event.budget,
         "domesticGross": event.domesticGross,

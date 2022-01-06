@@ -8,7 +8,7 @@ const MovieTable = (props) => (
             <tr>
                 <th>Title</th>
                 <th>US Release Date</th>
-                <th>Runtime</th>
+                <th>Runtime (min)</th>
                 <th>IMDB Rating</th>
                 <th>Metascore</th>
                 <th>Budget</th>
@@ -25,23 +25,25 @@ const MovieTable = (props) => (
                 props.movies.map((movie) => (
                     <tr key={movie.idMovie}>
                         <td>{movie.title}</td>
-                        <td>{movie.UsReleaseDate}</td>
+                        <td>{movie.usReleaseDate}</td>
                         <td>{movie.runtime}</td>
-                        <td>{movie.ImdbRating}</td>
+                        <td>{movie.imdbRating.toFixed(1)}</td>
                         <td>{movie.metascore}</td>
-                        <td>{movie.budget}</td>
-                        <td>{movie.domesticGross}</td>
-                        <td>{movie.totalGross}</td>
-                        <td>{movie.openingGross}</td>
+                        <td>${movie.budget.toLocaleString()}</td>
+                        <td>${movie.domesticGross.toLocaleString()}</td>
+                        <td>${movie.totalGross.toLocaleString()}</td>
+                        <td>${movie.openingGross.toLocaleString()}</td>
                         <td>{movie.oscarNominations}</td>
                         <td>{movie.oscarsWon}</td>
                         <td>{movie.franchise}</td>
-                        <td></td>
+                        <td>
                         <Link to ={`/movies/edit/${movie.idMovie}`} className = "btn btn-outline-warning">Edit</Link>
+                        </td>
+                        
                         <td>
                             <button
                             onClick={() =>{
-                                props.deleteMovie(movie);
+                                props.deleteRow(movie);
                             }}
                             className = "btn btn-outline-danger">Delete</button>
                         </td>

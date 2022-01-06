@@ -4,9 +4,9 @@ import Errors from './Errors';
 
 const EditMovie = () => {
     const [title, setTitle] = useState('');
-    const [UsReleaseDate, setUsReleaseDate] = useState('');
+    const [usReleaseDate, setusReleaseDate] = useState('');
     const [runtime, setRuntime] = useState('');
-    const [ImdbRating, setImdbRating] = useState('');
+    const [imdbRating, setimdbRating] = useState('');
     const [metascore, setMetascore] = useState('');
     const [budget, setBudget] = useState('');
     const [domesticGross, setDomesticGross] = useState('');
@@ -23,14 +23,14 @@ const EditMovie = () => {
     const titleOnChangeHandler = (event) => {
         setTitle(event.target.value);
     };
-    const UsReleaseDateOnChangeHandler = (event) => {
-        setUsReleaseDate(event.target.value);
+    const usReleaseDateOnChangeHandler = (event) => {
+        setusReleaseDate(event.target.value);
     };
     const runtimeOnChangeHandler = (event) => {
         setRuntime(event.target.value);
     };
-    const ImdbRatingOnChangeHandler = (event) => {
-        setImdbRating(event.target.value);
+    const imdbRatingOnChangeHandler = (event) => {
+        setimdbRating(event.target.value);
     };
     const metascoreOnChangeHandler = (event) => {
         setMetascore(event.target.value);
@@ -68,9 +68,9 @@ const EditMovie = () => {
             })
             .then(data => {
                 setTitle(data.title);
-                setUsReleaseDate(data.UsReleaseDate);
+                setusReleaseDate(data.usReleaseDate);
                 setRuntime(data.runtime);
-                setImdbRating(data.ImdbRating);
+                setimdbRating(data.imdbRating);
                 setMetascore(data.metascore);
                 setBudget(data.budget);
                 setDomesticGross(data.domesticGross);
@@ -90,9 +90,9 @@ const EditMovie = () => {
         const editedMovie = {
             "idMovie": idMovie,
             "title": title,
-            "UsReleaseDate": UsReleaseDate,
+            "usReleaseDate": usReleaseDate,
             "runtime": runtime,
-            "ImdbRating": ImdbRating,
+            "imdbRating": imdbRating,
             "metascore": metascore,
             "budget": budget,
             "domesticGross": domesticGross,
@@ -142,13 +142,13 @@ const EditMovie = () => {
             <br/>
 
             <div className="form-group">
-            <label htmlFor="UsReleaseDate">Movie US Release Date: </label>
+            <label htmlFor="usReleaseDate">Movie US Release Date: </label>
             <input className="form-control"
             type="date" 
-            id="UsReleaseDate"
-            name="UsReleaseDate" 
-            value={UsReleaseDate}
-            onChange={UsReleaseDateOnChangeHandler}
+            id="usReleaseDate"
+            name="usReleaseDate" 
+            value={usReleaseDate}
+            onChange={usReleaseDateOnChangeHandler}
             />
             </div>
             <br/>
@@ -166,13 +166,13 @@ const EditMovie = () => {
             <br/>
 
             <div className="form-group">
-            <label htmlFor="ImdbRating">Movie IMDB Rating: </label>
+            <label htmlFor="imdbRating">Movie IMDB Rating: </label>
             <input className="form-control"
             type="text" 
-            id="ImdbRating"
-            name="ImdbRating" 
-            value={ImdbRating}
-            onChange={ImdbRatingOnChangeHandler}
+            id="imdbRating"
+            name="imdbRating" 
+            value={imdbRating}
+            onChange={imdbRatingOnChangeHandler}
             />
             </div>
             <br/>

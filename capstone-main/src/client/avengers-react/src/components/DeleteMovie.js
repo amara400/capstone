@@ -17,7 +17,7 @@ const DeleteMovie = (props) => {
             <br/>
             <br/>
 
-            <label>Movie US Release Date: {movie.UsReleaseDate}</label>
+            <label>Movie US Release Date: {movie.usReleaseDate}</label>
             <br/>
             <br/>
 
@@ -25,7 +25,7 @@ const DeleteMovie = (props) => {
             <br/>
             <br/>
             
-            <label>Movie IMDB Rating: {movie.ImdbRating}</label>
+            <label>Movie IMDB Rating: {movie.imdbRating}</label>
             <br/>
             <br/>
 
