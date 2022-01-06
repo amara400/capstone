@@ -3,6 +3,7 @@ package learn.mcu_dashboard.controllers;
 import learn.mcu_dashboard.domain.MovieService;
 import learn.mcu_dashboard.domain.Result;
 import learn.mcu_dashboard.models.Movie;
+import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -26,7 +27,10 @@ public class MovieController {
 
     @PostMapping
     public ResponseEntity<Object> add(@RequestBody Movie movie) {
+        System.out.println("Post");
         Result<Movie> result = service.add(movie);
+        System.out.println("Resutls");
+        System.out.println(result.getMessages());
         if (result.isSuccess()) {
             return new ResponseEntity<>(result.getPayload(), HttpStatus.CREATED);
         }
