@@ -27,7 +27,7 @@ const MovieTable = (props) => (
                         <td>{movie.title}</td>
                         <td>{movie.usReleaseDate}</td>
                         <td>{movie.runtime}</td>
-                        <td>{movie.imdbRating.toFixed(1)}</td>
+                        <td>{movie.imdbRating.toLocaleString(undefined, {minimumFractionDigits: 1, maximumFractionDigits: 1})}</td>
                         <td>{movie.metascore}</td>
                         <td>${movie.budget.toLocaleString()}</td>
                         <td>${movie.domesticGross.toLocaleString()}</td>
