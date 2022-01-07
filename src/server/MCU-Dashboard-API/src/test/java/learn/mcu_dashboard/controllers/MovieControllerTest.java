@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
 package learn.mcu_dashboard.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -63,6 +66,10 @@ class MovieControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedJson));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
     }
 
     @Test
@@ -81,6 +88,10 @@ class MovieControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedJson));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
     }
 
     @Test
@@ -104,4 +115,8 @@ class MovieControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedJson));
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
