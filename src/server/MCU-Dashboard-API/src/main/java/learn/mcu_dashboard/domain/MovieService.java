@@ -1,3 +1,4 @@
+
 package learn.mcu_dashboard.domain;
 
 import learn.mcu_dashboard.data.MovieRepository;
@@ -67,7 +68,7 @@ public class MovieService {
             result.addMessage("Title is required", ResultType.INVALID);
         }
         // Needs a release date
-        if (Validations.isNullOrBlank(movie.getUsReleaseDate().toString())) {
+        if (Validations.isNull(movie.getUsReleaseDate())) {
             result.addMessage("Release date is required", ResultType.INVALID);
         }
         // Needs a runtime
@@ -75,6 +76,38 @@ public class MovieService {
             result.addMessage("Runtime must be  positive integer", ResultType.INVALID);
         }
 
+        //IMDB rating must be 0 (default) or between 1 and 10
+        if(!(movie.getImdbRating()== 0.0f || (movie.getImdbRating() >= 1.0f && movie.getImdbRating() <= 10.0f))){
+            result.addMessage("IMDB rating must be between 1.0 and 10.0", ResultType.INVALID);
+        }
+
+        if(movie.getMetascore() < 0 || movie.getMetascore() > 100){
+            result.addMessage("Metascore must be between 1 and 100", ResultType.INVALID);
+        }
+
+        if(Validations.isNegative(movie.getBudget())){
+            result.addMessage("Budget cannot be negative", ResultType.INVALID);
+        }
+
+        if(Validations.isNegative(movie.getDomesticGross())){
+            result.addMessage("Domestic Gross cannot be negative", ResultType.INVALID);
+        }
+
+        if(Validations.isNegative(movie.getTotalGross())){
+            result.addMessage("Total Gross cannot be negative", ResultType.INVALID);
+        }
+
+        if(Validations.isNegative(movie.getOpeningGross())){
+            result.addMessage("Opening Gross cannot be negative", ResultType.INVALID);
+        }
+
+        if(movie.getOscarNominations() < 0){
+            result.addMessage("Oscar Nominations cannot be negative", ResultType.INVALID);
+        }
+
+        if (movie.getOscarsWon() < 0){
+            result.addMessage("Oscars Won cannot be negative", ResultType.INVALID);
+        }
         return result;
     }
 }
