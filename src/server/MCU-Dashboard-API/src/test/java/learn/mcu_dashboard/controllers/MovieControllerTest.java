@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 
-=======
->>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
 package learn.mcu_dashboard.controllers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -36,12 +33,6 @@ class MovieControllerTest {
     @Autowired
     MockMvc mvc;
 
-    //    public Movie(int idMovie, String title, LocalDate usReleaseDate,
-//                 int runtime, float imdbRating, int metascore,
-//                 BigDecimal budget, BigDecimal domesticGross,
-//                 BigDecimal totalGross, BigDecimal openingGross,
-//                 int oscarNominations, int oscarsWon, String franchise)
-
     @Test
     void shouldGetAll() throws Exception {
         List<Movie> movies = List.of(
@@ -66,10 +57,6 @@ class MovieControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedJson));
-<<<<<<< HEAD
-=======
-
->>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
     }
 
     @Test
@@ -88,10 +75,6 @@ class MovieControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedJson));
-<<<<<<< HEAD
-=======
-
->>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
     }
 
     @Test
@@ -115,8 +98,7 @@ class MovieControllerTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json(expectedJson));
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 8cace8eefa78bd59b353c2a82044fc8c235d2589
+
+
+
