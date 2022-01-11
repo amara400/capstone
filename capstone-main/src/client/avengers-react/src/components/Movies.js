@@ -5,6 +5,7 @@ import AddMovie from "./AddMovie";
 import MovieTable from "./MovieTable";
 import React, { useState } from 'react';
 import { useEffect } from 'react';
+import MovieTable2 from '../MovieTable2';
 
 
 function Movies(){
@@ -138,6 +139,11 @@ function Movies(){
       setDeleting(true);
       setCurrentMovie({...movie});
     }
+
+    const cancelAdd = movie =>{
+        setAdding(false);
+        setCurrentMovie({...movie});
+    }
   
     return (
       <>
@@ -161,7 +167,7 @@ function Movies(){
               <h2>Add Movie</h2>
               <AddMovie
               AddMovie={add}
-              setAdding={setAdding}  
+              setAdding={cancelAdd}  
               />
               </>
             ) : deleting ? (
@@ -177,7 +183,7 @@ function Movies(){
               <>
               <div className="col">
                 <h2>All Movies</h2>
-                <MovieTable movies={movies} editRow={editRow} deleteRow={deleteRow} addRow={addRow}
+                  <MovieTable2 movies={movies} editRow={editRow} deleteRow={deleteRow} addRow={addRow}
                 />
                 </div>
                 </>

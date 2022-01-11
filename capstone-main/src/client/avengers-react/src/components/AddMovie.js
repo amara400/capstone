@@ -89,7 +89,7 @@ const AddMovie = props => {
                     placeholder="Movie US Release Date"
                     required/>
                 <br/>
-                <label>Movie Runtime</label>
+                <label>Movie Runtime (min)</label>
                 <input
                     type="text"
                     class="form-control"
@@ -99,7 +99,7 @@ const AddMovie = props => {
                     placeholder="Movie Runtime"
                     required/>
                 <br/>
-                <label>Movie IMDB Rating</label>
+                <label>Movie IMDB Rating (1-10)</label>
                 <input
                     type="text"
                     class="form-control"
@@ -109,7 +109,7 @@ const AddMovie = props => {
                     placeholder="Movie IMDB Rating"
                     required/>
                 <br/>
-                <label>Movie Metascore</label>
+                <label>Movie Metascore (1-100) </label>
                 <input
                     type="text"
                     class="form-control"
@@ -119,7 +119,7 @@ const AddMovie = props => {
                     placeholder="Movie Metascore"
                     required/>
                 <br/>
-                <label>Movie Budget</label>
+                <label>Movie Budget ($)</label>
                 <input
                     type="text"
                     class="form-control"
@@ -129,7 +129,7 @@ const AddMovie = props => {
                     placeholder="Movie Budget"
                     required/>
                 <br/>
-                <label>Movie Domestic Gross</label>
+                <label>Movie Domestic Gross ($)</label>
                 <input
                     type="text"
                     class="form-control"
@@ -139,7 +139,7 @@ const AddMovie = props => {
                     placeholder="Movie Domestic Gross"
                     required/>
                 <br/>
-                <label>Movie Total Gross</label>
+                <label>Movie Total Gross ($)</label>
                 <input
                     type="text"
                     class="form-control"
@@ -149,7 +149,7 @@ const AddMovie = props => {
                     placeholder="Movie Total Gross"
                     required/>
                 <br/>
-                <label>Movie Opening Gross</label>
+                <label>Movie Opening Gross ($) </label>
                 <input
                     type="text"
                     class="form-control"

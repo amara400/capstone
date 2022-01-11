@@ -14,6 +14,9 @@ import Contact from './Contact';
 import NotFound from './NotFound';
 import Header from './Header';
 import NavBar from './NavBar';
+import FullMovieData from './FullMovieData';
+import Login from './Login';
+
 
 
 function App(){
@@ -24,6 +27,9 @@ function App(){
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/about">
           <About />
@@ -39,6 +45,9 @@ function App(){
         </Route>
         <Route path="/movies/edit/:idMovie">
         <EditMovie />
+        </Route>
+        <Route path="/movies/data/:idMovie">
+          <FullMovieData />
         </Route>
         <Route path="/movie/delete/:idMovie">
         <DeleteMovie />

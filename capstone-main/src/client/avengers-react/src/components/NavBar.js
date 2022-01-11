@@ -20,6 +20,9 @@ function NavBar() {
         <li>
           <Link to="/movies/add">Add Movie</Link>
         </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
       </ul>
       </>
   );

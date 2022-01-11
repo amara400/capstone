@@ -2,15 +2,33 @@ import React, { useState, useEffect } from 'react';
 import { Link, useHistory, useParams } from 'react-router-dom';
 import Errors from './Errors';
 
-const DeleteMovie = (props) => {
-    const [movie, setMovie] = useState(props.currentMovie);
+const FullMovieData = (props) => {
+    const dataMovie = {idMovie: 1, title: 'Safe', usReleaseDate: 'Hoops', runtime: 'Haven', imdbRating: '1998-09-19', metascore: '69', budget: '69', domesticGross: '69', totalGross: '69', openingGross: '69', oscarNominations: '69', oscarsWon: '69', franchise: '69'};
+    const [movie, setMovie] = useState(dataMovie);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        props.deleteById(movie.idMovie);
-    };
+
+    const { idMovie } = useParams();
+    const history = useHistory();
+
+    useEffect(() => {
+        fetch(`http://localhost:8080/api/movie/${idMovie}`)
+            .then(response => {
+                if (response.status === 404){
+                    return Promise.reject(`Received 404 - Not Found for Movie ID: ${idMovie}`);
+                }
+                return response.json();
+            })
+            .then(movie => {
+                setMovie(movie);
+            }
+            )
+            .catch(error => {
+                console.log(error);
+            });
+    }, [idMovie]);
+
     return(
-        <form onSubmit={handleSubmit}>
+        <div>
             <br/>
 
             <label><b>Movie Title:</b> {movie.title}</label>
@@ -61,14 +79,9 @@ const DeleteMovie = (props) => {
             <br/>
             <br/>
 
-            <h3>Are you sure you want to delete this movie?</h3>
-            <br/>
-            <br/>
-
-            <button type='submit' className = "btn btn-danger" onClick={()=> props.setDeleting(true)}>Delete</button>
-            <button className="btn btn-info" onClick={() => props.setDeleting(false)}>Cancel</button>            
-        </form>
+            
+        </div>
     );
 };
 
-export default DeleteMovie;
+export default FullMovieData;
