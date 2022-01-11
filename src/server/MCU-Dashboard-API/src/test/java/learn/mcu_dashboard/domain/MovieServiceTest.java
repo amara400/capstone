@@ -13,7 +13,7 @@ import java.time.LocalDate;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.NONE)
+@SpringBootTest
 public class MovieServiceTest {
 
     @Autowired
@@ -149,8 +149,6 @@ public class MovieServiceTest {
         result = service.add(movie);
         assertEquals(ResultType.INVALID, result.getType());
     }
-
-
 
     @Test
     void shouldUpdate(){
@@ -301,13 +299,6 @@ public class MovieServiceTest {
         when(repository.deleteById(20)).thenReturn(false);
         assertFalse(service.deleteById(20));
     }
-
-
-
-
-
-
-
 
     private Movie makeMovie() {
         Movie movie = new Movie();

@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 public class MovieMapper implements RowMapper<Movie> {
 
+    @Override
     public Movie mapRow(ResultSet resultSet, int i) throws SQLException {
         Movie movie = new Movie();
         movie.setIdMovie(resultSet.getInt("idMovie"));

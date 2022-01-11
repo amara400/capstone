@@ -1,3 +1,4 @@
+
 package learn.mcu_dashboard.domain;
 
 import java.math.BigDecimal;
