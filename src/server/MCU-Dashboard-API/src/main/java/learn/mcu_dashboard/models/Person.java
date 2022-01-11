@@ -5,14 +5,14 @@ public class Person {
     private int idPerson;
     private String name;
 
-    // constructor
-    public Person(int idPerson, String name) {
-        this.idPerson = idPerson;
-        this.name = name;
-    }
-
-    // empty constructor
-    public Person() {}
+//    // constructor
+//    public Person(int idPerson, String name) {
+//        this.idPerson = idPerson;
+//        this.name = name;
+//    }
+//
+//    // empty constructor
+//    public Person() {}
 
     public int getIdPerson() {
         return idPerson;

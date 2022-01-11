@@ -7,12 +7,14 @@ import learn.mcu_dashboard.models.Person;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 
+@Repository
 public class PersonJdbcTemplateRepository implements PersonRepository {
 
     private final JdbcTemplate jdbcTemplate;
@@ -24,25 +26,24 @@ public class PersonJdbcTemplateRepository implements PersonRepository {
     @Override
     public Person findById(int idPerson) {
 
-                final String sql = "select idPerson, `name` " +
+                final String sql = "select idPerson, name " +
                 "from Person " +
-                "where idPerson = ?";
+                "where idPerson = ?;";
 
-        return jdbcTemplate.query(sql, new PersonMapper()).stream()
+        return jdbcTemplate.query(sql, new PersonMapper(), idPerson).stream()
                 .findFirst().orElse(null);
     }
 
     @Override
     public Person add(Person person) {
 
-        final String sql = "insert into Person (idPerson, `name`) " +
-                "values (?,?);";
+        final String sql = "insert into Person (`name`) " +
+                "values (?);";
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int rowsAffected = jdbcTemplate.update(connection -> {
             PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1, person.getIdPerson());
-            ps.setString(2, person.getName());
+            ps.setString(1, person.getName());
             return ps;
         }, keyHolder);
 
@@ -50,6 +51,7 @@ public class PersonJdbcTemplateRepository implements PersonRepository {
             return null;
         }
 
+        person.setIdPerson(keyHolder.getKey().intValue());
         return person;
     }
 
@@ -58,5 +60,4 @@ public class PersonJdbcTemplateRepository implements PersonRepository {
     public boolean deleteById(int idPerson) {
         return jdbcTemplate.update("delete from Person where idPerson =?;", idPerson) > 0;
     }
-
 }

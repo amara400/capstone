@@ -7,16 +7,16 @@ public class Movie_Person {
     private int idPerson;
     private Person person;
 
-    // constructor
-    public Movie_Person(int idMovie, String role, int idPerson, Person person) {
-        this.idMovie = idMovie;
-        this.role = role;
-        this.idPerson = idPerson;
-        this.person = person;
-    }
-
-    // empty constructor
-    public Movie_Person() {}
+//    // constructor
+//    public Movie_Person(int idMovie, String role, int idPerson, Person person) {
+//        this.idMovie = idMovie;
+//        this.role = role;
+//        this.idPerson = idPerson;
+//        this.person = person;
+//    }
+//
+//    // empty constructor
+//    public Movie_Person() {}
 
     public int getIdMovie() {
         return idMovie;

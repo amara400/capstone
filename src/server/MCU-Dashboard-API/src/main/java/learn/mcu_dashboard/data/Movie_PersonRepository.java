@@ -7,7 +7,7 @@ import java.util.List;
 public interface Movie_PersonRepository {
     List<Movie_Person> findByIdMovie(int idMovie);
 
-    boolean add(Movie_Person movie_person);
+    Movie_Person add(Movie_Person movie_person);
 
     boolean deleteByKey(int idMovie, String role, int idPerson);
 }

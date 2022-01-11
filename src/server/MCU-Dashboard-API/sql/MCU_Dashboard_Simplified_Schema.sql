@@ -1,3 +1,6 @@
+drop database if exists MCU_Dashboard;
+create database MCU_Dashboard;
+use MCU_Dashboard;
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;

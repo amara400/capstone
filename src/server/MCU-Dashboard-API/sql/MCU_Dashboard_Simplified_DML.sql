@@ -3,10 +3,6 @@
 
 -- check table for 126 rows of data
 select * from mcuEdited;
-
-drop database if exists MCU_Dashboard;
-create database MCU_Dashboard;
-use MCU_Dashboard;
 -- ------------------------------------------- --
 
 

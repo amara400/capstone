@@ -4,9 +4,16 @@ import learn.mcu_dashboard.data.mappers.MovieMapper;
 import learn.mcu_dashboard.data.mappers.Movie_PersonMapper;
 import learn.mcu_dashboard.models.Movie_Person;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
+import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.util.List;
 
+@Repository
 public class Movie_PersonJdbcTemplateRepository implements Movie_PersonRepository {
 
     private final JdbcTemplate jdbcTemplate;
@@ -17,50 +24,39 @@ public class Movie_PersonJdbcTemplateRepository implements Movie_PersonRepositor
 
     @Override
     public List<Movie_Person> findByIdMovie(int idMovie) {
-        final String sql = "select mp.idMovie, mp.`role`, p.`name` " +
+        final String sql = "select mp.idMovie, mp.`role`, p.idPerson, p.`name` " +
                 "from Movie_Person mp " +
-                "inner join Person p on mp.idPerson = p.idPerson" +
-                "where idMovie = ?";
+                "inner join Person p on mp.idPerson = p.idPerson " +
+                "where idMovie = ?;";
 
-//                final String sql = "select idMovie, `role`, idPerson " +
-//                "from Movie_Person " +
-//                "where idMovie = ?";
-
-        return jdbcTemplate.query(sql, new Movie_PersonMapper());
+        return jdbcTemplate.query(sql, new Movie_PersonMapper(), idMovie);
     }
 
     @Override
-    public boolean add(Movie_Person movie_person) {
+    public Movie_Person add(Movie_Person movie_person) {
 
-        final String sql = "insert into movie_person (idMovie, `role`, idPerson) " +
+        final String sql = "insert into Movie_Person (idMovie, `role`, idPerson) " +
                 "values (?,?,?);";
 
-        return jdbcTemplate.update(sql,
-                movie_person.getIdMovie(),
-                movie_person.getRole(),
-                movie_person.getIdPerson()) > 0;
+
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+        int rowsAffected = jdbcTemplate.update(connection -> {
+            PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+            ps.setInt(1, movie_person.getIdMovie());
+            ps.setString(2, movie_person.getRole());
+            ps.setInt(3, movie_person.getIdPerson());
+            return ps;
+        }, keyHolder);
+
+        if (rowsAffected <= 0) {
+            return null;
+        }
+
+        return movie_person;
     }
 
     // No update for now, you can either add or delete
 
-//    @Override
-//    public boolean update(Movie_Person movie_person) {
-//
-//        final String sql = "update Movie_Person set "
-//                + "idMovie = ?, "
-//                + "`role` = ?, "
-//                + "idPerson = ?, "
-//                + "where idMovie = ? and agent_id = ?;";
-//
-//        return jdbcTemplate.update(sql,
-//                agencyAgent.getIdentifier(),
-//                agencyAgent.getSecurityClearance().getSecurityClearanceId(),
-//                agencyAgent.getActivationDate(),
-//                agencyAgent.isActive(),
-//                agencyAgent.getAgencyId(),
-//                agencyAgent.getAgent().getAgentId()) > 0;
-//
-//    }
 
     @Override
     public boolean deleteByKey(int idMovie, String role, int idPerson) {

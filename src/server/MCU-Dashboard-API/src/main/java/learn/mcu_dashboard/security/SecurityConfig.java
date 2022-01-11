@@ -33,14 +33,29 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/authenticate").permitAll()
                 .antMatchers("/create_account").permitAll()
+                // Movie
                 .antMatchers(HttpMethod.GET,
-                        "/api/movie", "/api/movie/*").hasAnyRole("USER", "ADMIN")
+                        "/api/movie", "/api/movie/*").permitAll()
                 .antMatchers(HttpMethod.POST,
                         "/api/movie").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.PUT,
                         "/api/movie/*").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.DELETE,
                         "/api/movie/*").hasAnyRole("USER", "ADMIN")
+                // Movie_Person
+                .antMatchers(HttpMethod.GET,
+                        "/api/movie_person/*").permitAll()
+                .antMatchers(HttpMethod.POST,
+                        "/api/movie_person").permitAll()
+                .antMatchers(HttpMethod.DELETE,
+                        "/api/movie_person/*").permitAll()
+                // Person
+                .antMatchers(HttpMethod.GET,
+                        "/api/person/*").permitAll()
+                .antMatchers(HttpMethod.POST,
+                        "/api/person").permitAll()
+                .antMatchers(HttpMethod.DELETE,
+                        "/api/person/*").permitAll()
                 .antMatchers("/api/**").denyAll()
                 .and()
                 .addFilter(new JwtRequestFilter(authenticationManager(), converter))

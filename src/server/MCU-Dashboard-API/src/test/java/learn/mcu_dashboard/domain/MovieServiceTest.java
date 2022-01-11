@@ -150,8 +150,6 @@ public class MovieServiceTest {
         assertEquals(ResultType.INVALID, result.getType());
     }
 
-
-
     @Test
     void shouldUpdate(){
         Movie movieIn = makeMovie();

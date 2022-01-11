@@ -29,7 +29,7 @@ public class MovieController {
     public ResponseEntity<Object> add(@RequestBody Movie movie) {
         System.out.println("Post");
         Result<Movie> result = service.add(movie);
-        System.out.println("Resutls");
+        System.out.println("Results");
         System.out.println(result.getMessages());
         if (result.isSuccess()) {
             return new ResponseEntity<>(result.getPayload(), HttpStatus.CREATED);
