@@ -9,5 +9,7 @@ public interface Movie_PersonRepository {
 
     Movie_Person add(Movie_Person movie_person);
 
+    boolean findPersonByIdPerson(int idPerson);
+
     boolean deleteByKey(int idMovie, String role, int idPerson);
 }
