@@ -2,6 +2,7 @@
 package learn.mcu_dashboard.domain;
 
 import learn.mcu_dashboard.data.MovieRepository;
+import learn.mcu_dashboard.data.Movie_PersonRepository;
 import learn.mcu_dashboard.models.Movie;
 import org.springframework.stereotype.Service;
 
@@ -11,13 +12,17 @@ import java.util.List;
 @Service
 public class MovieService {
 
-    private final MovieRepository repository;
+    private final MovieRepository movieRepository;
+    private final Movie_PersonRepository movie_personRepository;
 
-    public MovieService(MovieRepository repository) {this.repository = repository;}
+    public MovieService(MovieRepository movieRepository, Movie_PersonRepository movie_personRepository) {
+        this.movieRepository = movieRepository;
+        this.movie_personRepository = movie_personRepository;
+    }
 
-    public List<Movie> findAll(){return repository.findAll();}
+    public List<Movie> findAll(){return movieRepository.findAll();}
 
-    public Movie findById(int idMovie) {return repository.findById(idMovie);}
+    public Movie findById(int idMovie) {return movieRepository.findById(idMovie);}
 
     public Result<Movie> add(Movie movie) {
         Result<Movie> result = validate(movie);
@@ -30,7 +35,7 @@ public class MovieService {
             return result;
         }
 
-        movie = repository.add(movie);
+        movie = movieRepository.add(movie);
         result.setPayload(movie);
         return result;
     }
@@ -46,7 +51,7 @@ public class MovieService {
             return result;
         }
 
-        if (!repository.update(movie)) {
+        if (!movieRepository.update(movie)) {
             String msg = String.format("idMovie: %s, not found", movie.getIdMovie());
             result.addMessage(msg, ResultType.NOT_FOUND);
         }
@@ -54,7 +59,15 @@ public class MovieService {
         return result;
     }
 
-    public boolean deleteById(int idMovie) {return repository.deleteById(idMovie);}
+    public boolean deleteById(int idMovie) {
+
+        // Won't delete if movie is referenced in Movie_Person
+        if (movie_personRepository.findByIdMovie(idMovie).size() > 0) {
+            return false;
+        }
+
+        return movieRepository.deleteById(idMovie);
+    }
 
     // Support method
     private Result<Movie> validate(Movie movie) {

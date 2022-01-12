@@ -53,6 +53,12 @@ class Movie_PersonRepositoryTest {
     }
 
     @Test
+    void shouldFindReferencedPerson() {
+        assertTrue(repository.findPersonByIdPerson(1));
+
+    }
+
+    @Test
     void shouldNotDeleteByNonexistentKey() {
         assertFalse(repository.deleteByKey(5,"Cast",41));
     }

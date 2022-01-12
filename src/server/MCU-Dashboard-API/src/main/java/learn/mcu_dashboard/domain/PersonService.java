@@ -1,6 +1,7 @@
 package learn.mcu_dashboard.domain;
 
 import learn.mcu_dashboard.data.MovieRepository;
+import learn.mcu_dashboard.data.Movie_PersonRepository;
 import learn.mcu_dashboard.data.PersonRepository;
 import learn.mcu_dashboard.models.Movie;
 import learn.mcu_dashboard.models.Person;
@@ -11,11 +12,15 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    private final PersonRepository repository;
+    private final PersonRepository personRepository;
+    private final Movie_PersonRepository movie_personRepository;
 
-    public PersonService(PersonRepository repository) {this.repository = repository;}
+    public PersonService(PersonRepository personRepository, Movie_PersonRepository movie_personRepository) {
+        this.personRepository = personRepository;
+        this.movie_personRepository = movie_personRepository;
+    }
 
-    public Person findById(int idPerson) {return repository.findById(idPerson);}
+    public Person findById(int idPerson) {return personRepository.findById(idPerson);}
 
     public Result<Person> add(Person person) {
         Result<Person> result = validate(person);
@@ -28,12 +33,21 @@ public class PersonService {
             return result;
         }
 
-        person = repository.add(person);
+        person = personRepository.add(person);
         result.setPayload(person);
         return result;
     }
 
-    public boolean deleteById(int idMovie) {return repository.deleteById(idMovie);}
+    public boolean deleteById(int idPerson) {
+        //Result<Person> result = new Result<>();
+
+        if (movie_personRepository.findPersonByIdPerson(idPerson)) {
+            //result.addMessage("Cannot delete a person referenced by Movie_Person", ResultType.INVALID);
+            return false;
+        }
+
+        return personRepository.deleteById(idPerson);
+    }
 
     // Support method
     private Result<Person> validate(Person person) {

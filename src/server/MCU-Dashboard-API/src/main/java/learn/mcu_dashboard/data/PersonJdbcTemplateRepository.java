@@ -35,6 +35,17 @@ public class PersonJdbcTemplateRepository implements PersonRepository {
     }
 
     @Override
+    public Person findPersonByName(String name) {
+
+        final String sql = "select idPerson, `name` " +
+                "from Person " +
+                "where `name` = ?;";
+
+        return jdbcTemplate.query(sql, new PersonMapper(), name).stream()
+                .findFirst().orElse(null);
+    }
+
+    @Override
     public Person add(Person person) {
 
         final String sql = "insert into Person (`name`) " +
@@ -58,6 +69,6 @@ public class PersonJdbcTemplateRepository implements PersonRepository {
     @Override
     @Transactional
     public boolean deleteById(int idPerson) {
-        return jdbcTemplate.update("delete from Person where idPerson =?;", idPerson) > 0;
+        return jdbcTemplate.update("delete from Person where idPerson = ?;", idPerson) > 0;
     }
 }
