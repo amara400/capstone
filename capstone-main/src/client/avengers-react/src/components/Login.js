@@ -1,5 +1,7 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import {Link, useHistory} from "react-router-dom";
+import AuthContext from "../context/AuthContext.js"
+import jwtDecode from "jwt-decode";
 
 import Errors from "./Errors";
 
@@ -7,15 +9,52 @@ export default function Login(){
 
     const [userName, setUsername] =useState("");
     const[password, setPassword] = useState("");
-    const[errors, setErrors]=useState("")
+    const[errors, setErrors]=useState("");
+
+    const [_, setUserStatus] = useContext(AuthContext);
 
     const history = useHistory();
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-
-
-        history.push("/");
+    const handleSubmit = function (evt) {
+        evt.preventDefault();
+ 
+        const init ={
+            method: "POST",
+            headers: {
+             "Content-Type": "application/json",
+             "Accept": "application/json"
+         },
+         body: JSON.stringify({userName, password})
+        };
+ 
+        fetch("http://localhost:8080/authenticate", init)
+         .then(response =>{
+             console.log(response);
+             if(response.status === 200){
+                 return response.json()
+             }
+             else if(response.status === 400){
+                 const errors = response.json();
+                 setErrors(errors);
+             }
+             else if (response.status === 403){
+                 setErrors(["Login failed."]);
+             }
+             else{
+                 setErrors(["Unknown error."])
+             }
+         })
+         .then(json => {
+             console.log(json);
+             const {jwt_token} = json;
+             console.log(jwt_token);
+             console.log(jwtDecode(jwt_token));
+             setUserStatus({user: jwtDecode(jwt_token)})
+             history.push("/");
+         })
+         .catch(console.log);
+ 
+         
     }
 
     return(
