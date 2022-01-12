@@ -6,6 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 public interface PersonRepository {
     Person findById(int idPerson);
 
+    Person findPersonByName(String name);
+
     Person add(Person person);
 
     @Transactional

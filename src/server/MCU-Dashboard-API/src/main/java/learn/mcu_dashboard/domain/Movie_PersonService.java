@@ -2,6 +2,7 @@ package learn.mcu_dashboard.domain;
 
 import learn.mcu_dashboard.data.MovieRepository;
 import learn.mcu_dashboard.data.Movie_PersonRepository;
+import learn.mcu_dashboard.data.PersonRepository;
 import learn.mcu_dashboard.models.Movie;
 import learn.mcu_dashboard.models.Movie_Person;
 import org.springframework.stereotype.Service;
@@ -12,30 +13,34 @@ import java.util.List;
 @Service
 public class Movie_PersonService {
 
-    private final Movie_PersonRepository repository;
+    private final Movie_PersonRepository movie_personRepository;
+    private final PersonRepository personRepository;
 
-    public Movie_PersonService(Movie_PersonRepository repository) {this.repository = repository;}
+    public Movie_PersonService(Movie_PersonRepository movie_personRepository, PersonRepository personRepository) {
+        this.movie_personRepository = movie_personRepository;
+        this.personRepository = personRepository;
+    }
 
-    public List<Movie_Person> findByIdMovie(int idMovie){return repository.findByIdMovie(idMovie);}
+    public List<Movie_Person> findByIdMovie(int idMovie){return movie_personRepository.findByIdMovie(idMovie);}
 
     public Result<Movie_Person> add(Movie_Person movie_person) {
+
         Result<Movie_Person> result = validate(movie_person);
         if (!result.isSuccess()) {
             return result;
         }
 
-//        if (movie_person.getIdMovie() != 0) {
-//            result.addMessage("idMovie cannot be set for `add` operation", ResultType.INVALID);
-//            return result;
+//        if(personRepository.findPersonByName(movie_person.getPerson().getName()) == null) {
+//            personRepository.add(movie_person.getPerson());
 //        }
 
-        movie_person = repository.add(movie_person);
+        movie_person = movie_personRepository.add(movie_person);
         result.setPayload(movie_person);
         return result;
     }
 
     public boolean deleteByKey(int idMovie, String role, int idPerson) {
-        return repository.deleteByKey(idMovie, role, idPerson);
+        return movie_personRepository.deleteByKey(idMovie, role, idPerson);
     }
 
     // Support method

@@ -75,6 +75,12 @@ class PersonServiceTest {
         assertFalse(service.deleteById(40));
     }
 
+    @Test
+    void shouldNotDeleteReferencedPerson(){
+        when(repository.deleteById(40)).thenReturn(false);
+        assertFalse(service.deleteById(40));
+    }
+
     private Person makePerson() {
         Person person = new Person();
         //person.setIdPerson(NEXT_ID);

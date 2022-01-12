@@ -41,6 +41,14 @@ class PersonRepositoryTest {
     }
 
     @Test
+    void shouldFindByName() {
+        // 4	Robert Downey Jr.
+
+        Person actual = repository.findPersonByName("Robert Downey Jr.");
+        assertEquals(4, actual.getIdPerson());
+    }
+
+    @Test
     void shouldAdd() {
         Person andrew = makePerson();
         Person actual = repository.add(andrew);

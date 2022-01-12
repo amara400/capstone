@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
@@ -33,11 +34,22 @@ public class Movie_PersonJdbcTemplateRepository implements Movie_PersonRepositor
     }
 
     @Override
+    public boolean findPersonByIdPerson(int idPerson) {
+        final String sql = "select mp.idMovie, mp.`role`, p.idPerson, p.`name` " +
+                "from Movie_Person mp " +
+                "inner join Person p on mp.idPerson = p.idPerson " +
+                "where mp.idPerson = ?;";
+
+        List<Movie_Person> people = jdbcTemplate.query(sql, new Movie_PersonMapper(), idPerson);
+
+        return (people.size() > 0);
+    }
+
+    @Override
     public Movie_Person add(Movie_Person movie_person) {
 
         final String sql = "insert into Movie_Person (idMovie, `role`, idPerson) " +
                 "values (?,?,?);";
-
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
         int rowsAffected = jdbcTemplate.update(connection -> {
