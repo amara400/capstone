@@ -11,7 +11,7 @@ const AddContributor = props => {
           idPerson: null, 
           name: ''
         },
-      };
+    };
 
         const [ contributor, setContributor ] = useState(intialFormState);
 
@@ -24,7 +24,7 @@ const AddContributor = props => {
 
         const add = (event) => {
             event.preventDefault();
-            const marvelMovie = {
+            const moviePerson = {
                 idMovie: 0, 
                 role: null, 
                 idPerson: 0, 
@@ -40,7 +40,7 @@ const AddContributor = props => {
                     "Content-Type": "application/json",
                     "Accept": "application/json"
                 },
-                body: JSON.stringify(marvelMovie)
+                body: JSON.stringify(moviePerson)
             };
 
             fetch("http://localhost:8080/api/movie", init)

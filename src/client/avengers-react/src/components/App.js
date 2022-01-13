@@ -12,10 +12,10 @@ import Contact from './Contact';
 import NotFound from './NotFound';
 import Header from './Header';
 import FullMovieData from './FullMovieData';
-import Login from './Login';
 import Contributors from './Contributors'
 import DeleteContributor from './DeleteContributor'
 import AddContributor from './AddContributor'
+import Login from './Login';
 import AuthContext from '../context/AuthContext';
 
 function App(){
@@ -35,9 +35,11 @@ function App(){
         <Route exact path="/">
           <Home />
         </Route>
+
         <Route path="/login">
           {userStatus?.user ? <Redirect to="/" /> : <Login />}
         </Route>
+
         <Route path="/about">
           <About />
         </Route>
@@ -78,6 +80,7 @@ function App(){
         <Route>
           <NotFound />
         </Route>
+
       </Switch>
       </AuthContext.Provider>
     </Router>

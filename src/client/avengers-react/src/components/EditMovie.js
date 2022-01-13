@@ -275,13 +275,15 @@ const EditMovie = () => {
 
             <div className="mt-5">
                 <button className="btn btn-success"
-                type="submit">
-                    <i className="bi bi-save"></i>Edit Movies</button>
-                    <Link to="/movies" className="btn btn-warning ml-2">
-                        <i className="bi bi-x"></i>Cancel</Link>
-                </div>
-                </form>
-                </>
+                    type="submit">
+                    <i className="bi bi-save"></i>Edit Movies
+                </button>
+                <Link to="/movies" className="btn btn-warning ml-2">
+                    <i className="bi bi-x"></i>Cancel
+                </Link>
+            </div>
+            </form>
+            </>
     );
 }
 

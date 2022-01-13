@@ -13,10 +13,10 @@ const DeleteContributor = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.deleteById(contributor.idContributor);
+        deleteByKey(idMovie, role, idPerson);
     };
 
-    const deleteById = (idMovie, role, idPerson) => {
+    const deleteByKey = (idMovie, role, idPerson) => {
         fetch(`http://localhost:8080/api/movie_person/${idMovie}/${role}/${idPerson}`
             , { method: "DELETE"})
         .then(response => {
@@ -44,7 +44,7 @@ const DeleteContributor = (props) => {
             <br></br>
             <h4>Are you sure you want to delete this contributor?</h4>
 
-            <button type='submit' className = "btn btn-danger" onClick={()=> deleteById(idMovie, role, idPerson)}>Delete</button>
+            <button type='submit' className = "btn btn-danger" onClick={()=> deleteByKey(idMovie, role, idPerson)}>Delete</button>
             <Link to={`/movie/contributors/${idMovie}`} className="btn btn-primary btn-med">
                 <i className="bi bi-pencil"></i> Cancel
             </Link>         

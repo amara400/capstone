@@ -8,10 +8,7 @@ import { Link, useHistory, useParams } from 'react-router-dom';
 
 
 function Contributors(){
-  //   const dataContributors = [
-  //     {idMovie: 1, role: 'Director', idPerson: 1, person: {idPerson: 1, name: 'Eden'}},
-  //     {idMovie: 2, role: 'Producer', idPerson: 2, person: {idPerson: 2, name: 'Haven'}},
-  // ];
+
   const intialFormState = {
     idMovie: null, 
     role: '', 
@@ -27,7 +24,6 @@ function Contributors(){
   const [ adding, setAdding ] = useState(false);
   const [ deleting, setDeleting ] = useState(false)
   const { idMovie } = useParams();
-;
   
   
   useEffect(() => {
@@ -107,57 +103,17 @@ function Contributors(){
         setCurrentContributor({...contributor});
     }
   
-    // return (
-    //   <>
-    //   <div className="container">
-    //     <h1>Marvel Contributors</h1>
-    //     <br/>
-  
-    //     <div className="row">
-    //       <div className="col">
-    //         {adding ? (
-    //           <>
-    //           <h2>Add Contributor</h2>
-    //           <AddContributor
-    //           AddContributor={add}
-    //           setAdding={cancelAdd}  
-    //           />
-    //           </>
-    //         ) : deleting ? (
-    //           <>
-    //           <h2>Delete Contributor</h2>
-    //           <DeleteMovie
-    //           deleteById={deleteById}
-    //           currentContributor={currentContributor}
-    //           setDeleting={setDeleting}
-    //           />
-    //           </>
-    //         ) : (
-    //           <>
-    //           <div className="col">
-    //             <h2>All Contributors</h2>
-    //               <ContributorsTable contributors={contributors} deleteRow={deleteRow} addRow={addRow}
-    //             />
-    //             </div>
-    //             </>
-    //         )}
-
-    //       </div>
-    //     </div>
-    //   </div>
-    //   </>
-    // );
     return (
       <>
       <div className="container">
-        <h1>Marvel Contributors</h1>
+        <h1>Viewing Contributors for</h1>
         <br/>
   
         <div className="row">
           {}
               <>
               <div className="col">
-                <h2>All Contributors</h2>
+                <h2>{idMovie}</h2>
                   <ContributorsTable contributors={contributors} deleteRow={deleteRow} addRow={addRow}
                 />
                 </div>
@@ -167,5 +123,5 @@ function Contributors(){
       </>
     );
     
-            }
+}
   export default Contributors;
