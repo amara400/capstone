@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect, useHistory } from 'react-router-dom';
-// import jwt decode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 import AddMovie from './AddMovie';
 import DeleteMovie from './DeleteMovie';
 import EditMovie from './EditMovie';
@@ -16,18 +16,27 @@ import Login from './Login';
 import Contributors from './Contributors'
 import DeleteContributor from './DeleteContributor'
 import AddContributor from './AddContributor'
+import AuthContext from '../context/AuthContext';
 
 function App(){
 
+  const [userStatus, setUserStatus] = useState();
+
+  console.log("AuthContext");
+  console.log(AuthContext);
+
+
   return(
-    <Router>
+    <div className='container'>
+      <Router>
+      <AuthContext.Provider value={[userStatus, setUserStatus]}>
       <Header />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="/login">
-          <Login />
+          {userStatus?.user ? <Redirect to="/" /> : <Login />}
         </Route>
         <Route path="/about">
           <About />
@@ -70,7 +79,10 @@ function App(){
           <NotFound />
         </Route>
       </Switch>
+      </AuthContext.Provider>
     </Router>
+    </div>
+    
   );
 }
 

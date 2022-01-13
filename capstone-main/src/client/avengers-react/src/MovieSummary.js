@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import AuthContext from './context/AuthContext';
 
 function MovieSummary(props){
-    const [userStatus, setUserStatus] = useContext(AuthContext)
+    const [userStatus, setUserStatus] = useContext(AuthContext);
 
     console.log(props.movie);
 

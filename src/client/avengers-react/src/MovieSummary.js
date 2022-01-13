@@ -1,10 +1,9 @@
-import React from "react";
-import {Link} from "react-router-dom"
+import React, {useContext} from "react";
+import {Link} from "react-router-dom";
+import AuthContext from './context/AuthContext';
 
 function MovieSummary(props){
-    const handleClick = function(){
-        
-    }
+    const [userStatus, setUserStatus] = useContext(AuthContext);
 
     console.log(props.movie);
 
@@ -16,10 +15,13 @@ function MovieSummary(props){
             <td>
                 <Link to ={`/movies/data/${props.movie.idMovie}`} className = "btn btn-outline-primary">Full Data</Link>
             </td>
+            {userStatus?.user &&(
             <td>
                 <Link to ={`/movies/edit/${props.movie.idMovie}`} className = "btn btn-outline-warning">Edit</Link>
             </td>
+            )}
                         
+            {userStatus?.user?.authorities === "ROLE_ADMIN" && (           
             <td>
                 <button
                 onClick={() =>{
@@ -27,6 +29,7 @@ function MovieSummary(props){
                 }}
                 className = "btn btn-outline-danger">Delete</button>
             </td>
+            )}
         </tr>
     )
 
