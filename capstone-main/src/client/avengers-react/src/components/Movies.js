@@ -148,7 +148,7 @@ function Movies(){
     return (
       <>
       <div className="container">
-        <h1 className="display-4">Marvel Movies</h1>
+        <h1>Marvel Movies</h1>
         <br/>
   
         <div className="row">

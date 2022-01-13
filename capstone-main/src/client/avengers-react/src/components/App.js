@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect, useHistory } from 'react-router-dom';
-import jwtDecode from 'jwt-decode';
+// import jwt decode from 'jwt-decode';
 import AddMovie from './AddMovie';
 import DeleteMovie from './DeleteMovie';
 import EditMovie from './EditMovie';
+// import { useEffect } from 'react';
+// import './App.css';
 import Movies from './Movies';
 import MovieTable from './MovieTable';
 import Home from './Home';
@@ -11,12 +13,12 @@ import About from './About';
 import Contact from './Contact';
 import NotFound from './NotFound';
 import Header from './Header';
+import NavBar from './NavBar';
 import FullMovieData from './FullMovieData';
-import Contributors from './Contributors'
-import DeleteContributor from './DeleteContributor'
-import AddContributor from './AddContributor'
 import Login from './Login';
 import AuthContext from '../context/AuthContext';
+
+
 
 function App(){
 
@@ -25,28 +27,23 @@ function App(){
   console.log("AuthContext");
   console.log(AuthContext);
 
-
   return(
-    <div className='container'>
-      <Router>
+    <Router>
       <AuthContext.Provider value={[userStatus, setUserStatus]}>
       <Header />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
-
         <Route path="/login">
           {userStatus?.user ? <Redirect to="/" /> : <Login />}
         </Route>
-
         <Route path="/about">
           <About />
         </Route>
         <Route path="/contact">
           <Contact />
         </Route>
-
         <Route exact path="/movies">
           <Movies />
         </Route>
@@ -62,30 +59,12 @@ function App(){
         <Route path="/movie/delete/:idMovie">
           <DeleteMovie />
         </Route>
-
-        <Route path="/movie/contributors/add">
-          <AddContributor />
-        </Route>
-
-        <Route exact path="/movie/contributors/:idMovie">
-          <Contributors />
-        </Route>
-
-        <Route path="/movie/contributors/delete/:idMovie/:role/:idPerson/:name">
-          <DeleteContributor />
-        </Route>
-
-
-
         <Route>
           <NotFound />
         </Route>
-
       </Switch>
       </AuthContext.Provider>
     </Router>
-    </div>
-    
   );
 }
 

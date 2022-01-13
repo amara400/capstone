@@ -65,7 +65,7 @@ export default function Login(){
 
     return(
         <div>
-            <h1 className="display-4">Login</h1>
+            <h2>Login</h2>
             <Errors errors={errors} />
             <form onSubmit={handleSubmit}>
                 <div>

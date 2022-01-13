@@ -27,7 +27,7 @@ window.onload = function() {
 }
 
 function Home() {
-    
+
     function tryReload( ){
         if(!localStorage.getItem('reload')){
             localStorage['reload'] = true;
@@ -35,10 +35,10 @@ function Home() {
         }
     }
 
-    
+
     return(
         <>
-            <h1 className="display-4">Home</h1>
+            <h2>Home</h2>
 
             <div className='tableauPlaceholder' id='viz1642088807594' >
                 <object className='tableauViz'  >
@@ -60,6 +60,7 @@ function Home() {
             {tryReload()}
 
         </>
+
     );
 }
 export default Home;

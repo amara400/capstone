@@ -1,0 +1,135 @@
+movieId,Name,Franchise,US release Date,Duration(min),IMDB rating,metascore,Budget,Domestic Gross,Total Gross,Opening Gross,Oscar Nomination,Oscar won,Phase,name,role,Genre
+1,Iron Man,Iron Man,2008-05-02,126,7.9,79,140000000,318604126,585366247,98618668,2,0,1,Jon Favreau,Director,Action
+1,Iron Man,Iron Man,2008-05-03,126,7.9,79,140000000,318604126,585366247,98618668,2,0,1,Avi Arad,Producer,Adventure
+1,Iron Man,Iron Man,2008-05-04,126,7.9,79,140000000,318604126,585366247,98618668,2,0,1,Kevin Feige,Producer,Sci-Fi
+1,Iron Man,Iron Man,2008-05-05,126,7.9,79,140000000,318604126,585366247,98618668,2,0,1,Robert Downey Jr. ,Cast,
+1,Iron Man,Iron Man,2008-05-06,126,7.9,79,140000000,318604126,585366247,98618668,2,0,1,Gweneth Paltrow ,Cast,
+1,Iron Man,Iron Man,2008-05-07,126,7.9,79,140000000,318604126,585366247,98618668,2,0,1,Terrence Howard,Cast,
+2,The Incredible Hulk,The Hulk,2008-06-13,112,6.6,61,150000000,134806913,264770996,55414050,0,0,1,Louis Leterrier,Director,Action
+2,The Incredible Hulk,The Hulk,2008-06-14,112,6.6,61,150000000,134806913,264770996,55414050,0,0,1,Avi Arad,Producer,Adventure
+2,The Incredible Hulk,The Hulk,2008-06-15,112,6.6,61,150000000,134806913,264770996,55414050,0,0,1,Gale Ann Hurd,Producer,Sci-Fi
+2,The Incredible Hulk,The Hulk,2008-06-16,112,6.6,61,150000000,134806913,264770996,55414050,0,0,1,Kevin Feige,Producer,
+2,The Incredible Hulk,The Hulk,2008-06-17,112,6.6,61,150000000,134806913,264770996,55414050,0,0,1,Edward Norton ,Cast,
+2,The Incredible Hulk,The Hulk,2008-06-18,112,6.6,61,150000000,134806913,264770996,55414050,0,0,1,Liv Tyler ,Cast,
+2,The Incredible Hulk,The Hulk,2008-06-19,112,6.6,61,150000000,134806913,264770996,55414050,0,0,1,Tim Roth,Cast,
+3,Iron Man 2,Iron Man,2010-05-07,124,7,57,200000000,312433331,623933331,128122480,1,0,1,Jon Favreau,Director,Action
+3,Iron Man 3,Iron Man,2010-05-08,124,7,57,200000000,312433331,623933331,128122480,1,0,1,Kevin Feige,Producer,Adventure
+3,Iron Man 4,Iron Man,2010-05-09,124,7,57,200000000,312433331,623933331,128122480,1,0,1,Robert Downey Jr. ,Cast,Sci-Fi
+3,Iron Man 5,Iron Man,2010-05-10,124,7,57,200000000,312433331,623933331,128122480,1,0,1,Gweneth Paltrow ,Cast,
+3,Iron Man 6,Iron Man,2010-05-11,124,7,57,200000000,312433331,623933331,128122480,1,0,1,Mickey Rourke,Cast,
+4,Thor,Thor,2011-05-06,115,7,57,150000000,181030624,449326618,65723338,0,0,1,Kenneth Branagh,Director,Action
+4,Thor,Thor,2011-05-07,115,7,57,150000000,181030624,449326618,65723338,0,0,1,Kevin Feige,Producer,Adventure
+4,Thor,Thor,2011-05-08,115,7,57,150000000,181030624,449326618,65723338,0,0,1,Chris Hemsworth ,Cast,Fantasy
+4,Thor,Thor,2011-05-09,115,7,57,150000000,181030624,449326618,65723338,0,0,1,Anthony Hopkins ,Cast,
+4,Thor,Thor,2011-05-10,115,7,57,150000000,181030624,449326618,65723338,0,0,1,Natalie Portman,Cast,
+5,Captain America: The First Avenger,Captain America,2011-07-22,124,6.9,66,140000000,176654505,370569774,65058524,0,0,1,Joe Jhonston,Director,Action
+5,Captain America: The First Avenger,Captain America,2011-07-23,124,6.9,66,140000000,176654505,370569774,65058524,0,0,1,Kevin Feige,Producer,Adventure
+5,Captain America: The First Avenger,Captain America,2011-07-24,124,6.9,66,140000000,176654505,370569774,65058524,0,0,1,Chris Evans ,Cast,Sci-Fi
+5,Captain America: The First Avenger,Captain America,2011-07-25,124,6.9,66,140000000,176654505,370569774,65058524,0,0,1,Hugo Weaving ,Cast,
+5,Captain America: The First Avenger,Captain America,2011-07-26,124,6.9,66,140000000,176654505,370569774,65058524,0,0,1,Samuel L. Jackson,Cast,
+6,Marvel's the Avengers,Avengers,2012-05-04,143,8,69,220000000,623357910,1518812988,207438708,1,0,1,Joss Whedon,Director,Action
+6,Marvel's the Avengers,Avengers,2012-05-05,143,8,69,220000000,623357910,1518812988,207438708,1,0,1,Kevin Feige,Producer,Adventure
+6,Marvel's the Avengers,Avengers,2012-05-06,143,8,69,220000000,623357910,1518812988,207438708,1,0,1,Robert Downey Jr. ,Cast,Sci-Fi
+6,Marvel's the Avengers,Avengers,2012-05-07,143,8,69,220000000,623357910,1518812988,207438708,1,0,1,Chris Evans ,Cast,
+6,Marvel's the Avengers,Avengers,2012-05-08,143,8,69,220000000,623357910,1518812988,207438708,1,0,1,Scarlett Johansson ,Cast,
+6,Marvel's the Avengers,Avengers,2012-05-09,143,8,69,220000000,623357910,1518812988,207438708,1,0,1,Jeremy Renner,Cast,
+7,Iron Man 3,Iron Man,2013-05-03,130,7.1,62,200000000,408992272,1214811252,174144585,1,0,2,Shane Black,Director,Action
+7,Iron Man 4,Iron Man,2013-05-04,130,7.1,62,200000000,408992272,1214811252,174144585,1,0,2,Kevin Feige,Producer,Adventure
+7,Iron Man 5,Iron Man,2013-05-05,130,7.1,62,200000000,408992272,1214811252,174144585,1,0,2,Robert Downey Jr. ,Cast,Sci-Fi
+7,Iron Man 6,Iron Man,2013-05-06,130,7.1,62,200000000,408992272,1214811252,174144585,1,0,2,Gweneth Paltrow ,Cast,
+7,Iron Man 7,Iron Man,2013-05-07,130,7.1,62,200000000,408992272,1214811252,174144585,1,0,2,Guy Pearce,Cast,
+8,Thor: The Dark World,Thor,2013-11-08,112,6.8,54,170000000,206362140,644783140,85737841,0,0,2,Alan Taylor,Director,Action
+8,Thor: The Dark World,Thor,2013-11-09,112,6.8,54,170000000,206362140,644783140,85737841,0,0,2,Kevin Feige,Producer,Adventure
+8,Thor: The Dark World,Thor,2013-11-10,112,6.8,54,170000000,206362140,644783140,85737841,0,0,2,Chris Hemsworth ,Cast,Fantasy
+8,Thor: The Dark World,Thor,2013-11-11,112,6.8,54,170000000,206362140,644783140,85737841,0,0,2,Natalie Portman ,Cast,
+8,Thor: The Dark World,Thor,2013-11-12,112,6.8,54,170000000,206362140,644783140,85737841,0,0,2,Tom Hiddleston,Cast,
+9,Captain America : The Winter Soldier,Captain America,2014-04-04,136,7.7,70,170000000,259746958,714421503,95023721,1,0,2,Anthony Russo,Director,Action
+9,Captain America : The Winter Soldier,Captain America,2014-04-05,136,7.7,70,170000000,259746958,714421503,95023721,1,0,2,Joe Russo,Director,Adventure
+9,Captain America : The Winter Soldier,Captain America,2014-04-06,136,7.7,70,170000000,259746958,714421503,95023721,1,0,2,Kevin Feige,Producer,Sci-Fi
+9,Captain America : The Winter Soldier,Captain America,2014-04-07,136,7.7,70,170000000,259746958,714421503,95023721,1,0,2,Chris Evans ,Cast,
+9,Captain America : The Winter Soldier,Captain America,2014-04-08,136,7.7,70,170000000,259746958,714421503,95023721,1,0,2,Scarlett Johansson ,Cast,
+9,Captain America : The Winter Soldier,Captain America,2014-04-09,136,7.7,70,170000000,259746958,714421503,95023721,1,0,2,Samuel L. Jackson,Cast,
+10,Guardians Of the Galaxy,Guardians of the Galaxy,2014-08-01,121,8,76,170000000,333714112,772776600,94320883,2,0,2,James Gunn,Director,Action
+10,Guardians Of the Galaxy,Guardians of the Galaxy,2014-08-02,121,8,76,170000000,333714112,772776600,94320883,2,0,2,Kevin Feige,Producer,Adventure
+10,Guardians Of the Galaxy,Guardians of the Galaxy,2014-08-03,121,8,76,170000000,333714112,772776600,94320883,2,0,2,Chris Patt ,Cast,Comedy
+10,Guardians Of the Galaxy,Guardians of the Galaxy,2014-08-04,121,8,76,170000000,333714112,772776600,94320883,2,0,2,Vin Diesel ,Cast,
+10,Guardians Of the Galaxy,Guardians of the Galaxy,2014-08-05,121,8,76,170000000,333714112,772776600,94320883,2,0,2,Bradely Cooper,Cast,
+11,Avengers : Age of Ultron,Avengers,2015-05-01,141,7.3,66,250000000,459005868,1402805868,191271109,0,0,2,Joss Whedon,Director,Action
+11,Avengers : Age of Ultron,Avengers,2015-05-02,141,7.3,66,250000000,459005868,1402805868,191271109,0,0,2,Kevin Feige,Producer,Adventure
+11,Avengers : Age of Ultron,Avengers,2015-05-03,141,7.3,66,250000000,459005868,1402805868,191271109,0,0,2,Robert Downey Jr. ,Cast,Sci-Fi
+11,Avengers : Age of Ultron,Avengers,2015-05-04,141,7.3,66,250000000,459005868,1402805868,191271109,0,0,2,Chris Evans ,Cast,
+11,Avengers : Age of Ultron,Avengers,2015-05-05,141,7.3,66,250000000,459005868,1402805868,191271109,0,0,2,Chris Hemsworth ,Cast,
+11,Avengers : Age of Ultron,Avengers,2015-05-06,141,7.3,66,250000000,459005868,1402805868,191271109,0,0,2,Mark Ruffalo,Cast,
+12,Ant-Man,Ant-Man,2015-07-17,117,7.3,64,130000000,180202163,519311965,57225526,0,0,2,Peyton Reed,Director,Action
+12,Ant-Man,Ant-Man,2015-07-18,117,7.3,64,130000000,180202163,519311965,57225526,0,0,2,Kevin Feige,Producer,Adventure
+12,Ant-Man,Ant-Man,2015-07-19,117,7.3,64,130000000,180202163,519311965,57225526,0,0,2,Paul Rudd ,Cast,Comedy
+12,Ant-Man,Ant-Man,2015-07-20,117,7.3,64,130000000,180202163,519311965,57225526,0,0,2,Michael Douglas ,Cast,
+12,Ant-Man,Ant-Man,2015-07-21,117,7.3,64,130000000,180202163,519311965,57225526,0,0,2,Corey Stall,Cast,
+13,Captain America: Civil War,Captain America,2016-05-06,147,7.8,75,250000000,408084349,1153296293,179139142,0,0,3,Anthony Russo,Director,Action
+13,Captain America: Civil War,Captain America,2016-05-07,147,7.8,75,250000000,408084349,1153296293,179139142,0,0,3,Joe Russo,Director,Adventure
+13,Captain America: Civil War,Captain America,2016-05-08,147,7.8,75,250000000,408084349,1153296293,179139142,0,0,3,Kevin Feige,Producer,Sci-Fi
+13,Captain America: Civil War,Captain America,2016-05-09,147,7.8,75,250000000,408084349,1153296293,179139142,0,0,3,Robert Downey Jr. ,Cast,
+13,Captain America: Civil War,Captain America,2016-05-10,147,7.8,75,250000000,408084349,1153296293,179139142,0,0,3,Chris Evans ,Cast,
+13,Captain America: Civil War,Captain America,2016-05-11,147,7.8,75,250000000,408084349,1153296293,179139142,0,0,3,Scarlett Johansson ,Cast,
+13,Captain America: Civil War,Captain America,2016-05-12,147,7.8,75,250000000,408084349,1153296293,179139142,0,0,3,Sebastian Stan,Cast,
+14,Doctor Strange ,Doctor Strange,2016-11-04,115,7.5,72,165000000,232641920,677718395,85058311,1,0,3,Scott Derrickson,Director,Action
+14,Doctor Strange ,Doctor Strange,2016-11-05,115,7.5,72,165000000,232641920,677718395,85058311,1,0,3,Kevin Feige,Producer,Adventure
+14,Doctor Strange ,Doctor Strange,2016-11-06,115,7.5,72,165000000,232641920,677718395,85058311,1,0,3,Benedict Cumberbatch ,Cast,Fantasy
+14,Doctor Strange ,Doctor Strange,2016-11-07,115,7.5,72,165000000,232641920,677718395,85058311,1,0,3,Chiswetel Ejiofor ,Cast,
+14,Doctor Strange ,Doctor Strange,2016-11-08,115,7.5,72,165000000,232641920,677718395,85058311,1,0,3,Racheal McAdams,Cast,
+15,Guardians of the Galaxy Vol. 2,Guardians of the Galaxy,2017-05-05,136,7.6,67,200000000,389813101,863756051,146510104,1,0,3,James Gunn,Director,Action
+15,Guardians of the Galaxy Vol. 3,Guardians of the Galaxy,2017-05-06,136,7.6,67,200000000,389813101,863756051,146510104,1,0,3,Kevin Feige,Producer,Adventure
+15,Guardians of the Galaxy Vol. 4,Guardians of the Galaxy,2017-05-07,136,7.6,67,200000000,389813101,863756051,146510104,1,0,3,Chris Patt ,Cast,Comedy
+15,Guardians of the Galaxy Vol. 5,Guardians of the Galaxy,2017-05-08,136,7.6,67,200000000,389813101,863756051,146510104,1,0,3, Zoe Saldana ,Cast,
+15,Guardians of the Galaxy Vol. 6,Guardians of the Galaxy,2017-05-09,136,7.6,67,200000000,389813101,863756051,146510104,1,0,3,Dave Bautista ,Cast,
+15,Guardians of the Galaxy Vol. 7,Guardians of the Galaxy,2017-05-10,136,7.6,67,200000000,389813101,863756051,146510104,1,0,3,Vin Diesel,Cast,
+16,Spider-Man:Homecoming,Spider-Man,2017-07-07,133,7.4,73,175000000,334201140,880166924,117027503,0,0,3,Jon Watts,Director,Action
+16,Spider-Man:Homecoming,Spider-Man,2017-07-08,133,7.4,73,175000000,334201140,880166924,117027503,0,0,3,Kevin Feige,Producer,Adventure
+16,Spider-Man:Homecoming,Spider-Man,2017-07-09,133,7.4,73,175000000,334201140,880166924,117027503,0,0,3,Amy Pascal,Producer,Sci-Fi
+16,Spider-Man:Homecoming,Spider-Man,2017-07-10,133,7.4,73,175000000,334201140,880166924,117027503,0,0,3,Tom Holland ,Cast,
+16,Spider-Man:Homecoming,Spider-Man,2017-07-11,133,7.4,73,175000000,334201140,880166924,117027503,0,0,3,Michael Keaton ,Cast,
+16,Spider-Man:Homecoming,Spider-Man,2017-07-12,133,7.4,73,175000000,334201140,880166924,117027503,0,0,3,Robert Downey Jr.,Cast,
+17,Thor:Ragnarok,Thor,2017-11-03,130,7.9,74,180000000,315058289,853977126,122744989,0,0,3,Taika Waititi,Director,Action
+17,Thor:Ragnarok,Thor,2017-11-04,130,7.9,74,180000000,315058289,853977126,122744989,0,0,3,Kevin Feige,Producer,Adventure
+17,Thor:Ragnarok,Thor,2017-11-05,130,7.9,74,180000000,315058289,853977126,122744989,0,0,3,Chris Hemsworth ,Cast,Comedy
+17,Thor:Ragnarok,Thor,2017-11-06,130,7.9,74,180000000,315058289,853977126,122744989,0,0,3,Cate Blanchett ,Cast,
+17,Thor:Ragnarok,Thor,2017-11-07,130,7.9,74,180000000,315058289,853977126,122744989,0,0,3,Tom Hiddleston,Cast,
+18,,,,,,,,,,,,,,Ryan Coogler,Director,Action
+18,,,,,,,,,,,,,,Kevin Feige,Producer,Adventure
+18,,,,,,,,,,,,,,Chadwick Boseman ,Cast,Sci-Fi
+18,,,,,,,,,,,,,,Michael B. Jordan ,Cast,
+18,,,,,,,,,,,,,,Lupita Nyong'o,Cast,
+19,,,,,,,,,,,,,,Anthony Russo,Director,Action
+19,,,,,,,,,,,,,,Joe Russo,Director,Adventure
+19,,,,,,,,,,,,,,Kevin Feige,Producer,Sci-Fi
+19,,,,,,,,,,,,,,Robert Downey Jr. ,Cast,
+19,,,,,,,,,,,,,,Chris Evans ,Cast,
+19,,,,,,,,,,,,,,Chris Hemsworth ,Cast,
+19,,,,,,,,,,,,,,Mark Ruffalo ,Cast,
+19,,,,,,,,,,,,,,Josh Brolin,Cast,
+20,,,,,,,,,,,,,,Peyton Reed,Director,Action
+20,,,,,,,,,,,,,,Kevin Feige,Producer,Adventure
+20,,,,,,,,,,,,,,Stephen Broussard,Producer,Comedy
+20,,,,,,,,,,,,,,Paul Rudd ,Cast,
+20,,,,,,,,,,,,,,Evangeline Lilly ,Cast,
+20,,,,,,,,,,,,,,Micheal Pena,Cast,
+21,,,,,,,,,,,,,,Anna Boden,Director,Action
+21,,,,,,,,,,,,,,Ryan Fleck,Director,Adventure
+21,,,,,,,,,,,,,,Kevin Feige,Producer,Sci-Fi
+21,,,,,,,,,,,,,,Brie Larson ,Cast,
+21,,,,,,,,,,,,,,Samuel L. Jackson ,Cast,
+21,,,,,,,,,,,,,,Ben Mendelsohn,Cast,
+22,,,,,,,,,,,,,,Anthony Russo,Director,Action
+22,,,,,,,,,,,,,,Joe Russo,Director,Adventure
+22,,,,,,,,,,,,,,Kevin Feige,Producer,Drama
+22,,,,,,,,,,,,,,Robert Downey Jr. ,Cast,
+22,,,,,,,,,,,,,,Chris Evans ,Cast,
+22,,,,,,,,,,,,,,Chris Hemsworth ,Cast,
+22,,,,,,,,,,,,,,Mark Ruffalo ,Cast,
+22,,,,,,,,,,,,,,Josh Brolin,Cast,
+23,,,,,,,,,,,,,,Jon Watts,Director,Action
+23,,,,,,,,,,,,,,Kevin Feige,Producer,Adventure
+23,,,,,,,,,,,,,,Amy Pascal,Producer,Sci-Fi
+23,,,,,,,,,,,,,,Tom Holland ,Cast,
+23,,,,,,,,,,,,,,Samuel L. Jackson ,Cast,
+23,,,,,,,,,,,,,,Jake Gyllenhaal,Cast,

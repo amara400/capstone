@@ -1,6 +1,6 @@
 function About() {
     return (
-        <h1 className="display-4">About</h1>
+        <h2>About Trail</h2>
     );
 }
 export default About;
