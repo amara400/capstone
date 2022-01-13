@@ -28,9 +28,21 @@ function NavBar() {
             <Link to="/movies/add">Add Movie</Link>
           </li>
         )}
-        <li>
-          <Link to="/login">Login</Link>
+        {userStatus?.user? (
+          <li>
+            <button onClick={() => {
+              setUserStatus(null);
+              localStorage.removeItem("token");
+            }}
+            >
+              Logout {userStatus.user.sub}
+            </button>
+          </li>
+        ) : (
+          <li>
+            <Link to="/login">Login</Link>
         </li>
+        )}
       </ul>
       </>
   );
