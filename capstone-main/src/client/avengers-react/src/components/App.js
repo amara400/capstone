@@ -16,20 +16,27 @@ import Header from './Header';
 import NavBar from './NavBar';
 import FullMovieData from './FullMovieData';
 import Login from './Login';
+import AuthContext from '../context/AuthContext';
 
 
 
 function App(){
 
+  const [userStatus, setUserStatus] = useState();
+
+  console.log("AuthContext");
+  console.log(AuthContext);
+
   return(
     <Router>
+      <AuthContext.Provider value={[userStatus, setUserStatus]}>
       <Header />
       <Switch>
         <Route exact path="/">
           <Home />
         </Route>
         <Route path="/login">
-          <Login />
+          {userStatus?.user ? <Redirect to="/" /> : <Login />}
         </Route>
         <Route path="/about">
           <About />
@@ -38,24 +45,25 @@ function App(){
           <Contact />
         </Route>
         <Route exact path="/movies">
-        <Movies />
+          <Movies />
         </Route>
         <Route path="/movies/add">
-        <AddMovie />
+          <AddMovie />
         </Route>
         <Route path="/movies/edit/:idMovie">
-        <EditMovie />
+          <EditMovie />
         </Route>
         <Route path="/movies/data/:idMovie">
           <FullMovieData />
         </Route>
         <Route path="/movie/delete/:idMovie">
-        <DeleteMovie />
+          <DeleteMovie />
         </Route>
         <Route>
           <NotFound />
         </Route>
-        </Switch>
+      </Switch>
+      </AuthContext.Provider>
     </Router>
   );
 }
