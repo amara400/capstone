@@ -8,11 +8,18 @@ function NavBar() {
   console.log(userStatus);
   console.log(userStatus?.user);
 
+  function goHome() {
+    console.log("goHome...")
+    if(localStorage.getItem('reload')){
+      localStorage.removeItem('reload');
+  }
+  }
+
   return (
       <>
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" onClick={goHome}>Home</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
