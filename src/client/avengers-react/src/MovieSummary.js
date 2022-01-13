@@ -17,6 +17,9 @@ function MovieSummary(props){
                 <Link to ={`/movies/data/${props.movie.idMovie}`} className = "btn btn-outline-primary">Full Data</Link>
             </td>
             <td>
+                <Link to ={`/movie/contributors/${props.movie.idMovie}`} className = "btn btn-outline-warning">View Contributors</Link>
+            </td>
+            <td>
                 <Link to ={`/movies/edit/${props.movie.idMovie}`} className = "btn btn-outline-warning">Edit</Link>
             </td>
                         

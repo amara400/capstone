@@ -37,9 +37,8 @@ const MovieTable = (props) => (
                         <td>{movie.oscarsWon}</td>
                         <td>{movie.franchise}</td>
                         <td>
-                        <Link to ={`/movies/edit/${movie.idMovie}`} className = "btn btn-outline-warning">Edit</Link>
+                            <Link to ={`/movies/edit/${movie.idMovie}`} className = "btn btn-outline-warning">Edit</Link>
                         </td>
-                        
                         <td>
                             <button
                             onClick={() =>{
@@ -47,7 +46,7 @@ const MovieTable = (props) => (
                             }}
                             className = "btn btn-outline-danger">Delete</button>
                         </td>
-                        </tr>
+                    </tr>
                 ))
             ):(
                 <tr>
