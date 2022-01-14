@@ -40,6 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                        "/api/movie").hasAnyRole("USER", "ADMIN")
                 .antMatchers(HttpMethod.POST,
                         "/api/movie").permitAll()
+                .antMatchers(HttpMethod.PUT,
+                        "/api/movie/*").permitAll()
                 .antMatchers(HttpMethod.DELETE,
                         "/api/movie/*").permitAll()
                 // Movie_Person

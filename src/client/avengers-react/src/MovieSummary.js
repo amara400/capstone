@@ -17,12 +17,12 @@ function MovieSummary(props){
             </td>
             {userStatus?.user &&(
             <td>
-                <Link to ={`/movie/contributors/${props.movie.idMovie}`} className = "btn btn-outline-warning">View Contributors</Link>
+                <Link to ={`/movies/edit/${props.movie.idMovie}`} className = "btn btn-outline-warning">Edit Movie</Link>
             </td>
             )}
             {userStatus?.user &&(
             <td>
-                <Link to ={`/movies/edit/${props.movie.idMovie}`} className = "btn btn-outline-warning">Edit</Link>
+                <Link to ={`/movie/contributors/${props.movie.idMovie}`} className = "btn btn-outline-warning">Edit Contributors</Link>
             </td>
             )}
                         

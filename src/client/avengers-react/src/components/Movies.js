@@ -148,44 +148,46 @@ function Movies(){
     return (
       <>
       <div className="container">
-        <h1 className="display-4">Marvel Movies</h1>
-        <br/>
+
   
         <div className="row">
           <div className="col">
             {editing ? (
               <>
-              <h2>Edit Movie</h2>
-              <EditMovie
-              editedMovie={edit}
-              currentMovie={currentMovie}
-              setEditing={setEditing}
-              />
+                <h1 className='display-4'>Edit Movie</h1>
+                <EditMovie
+                editedMovie={edit}
+                currentMovie={currentMovie}
+                setEditing={setEditing}
+                />
               </>
             ) : adding ? (
               <>
-              <h2>Add Movie</h2>
-              <AddMovie
-              AddMovie={add}
-              setAdding={cancelAdd}  
-              />
+                <h2>Add Movie</h2>
+                <AddMovie
+                AddMovie={add}
+                setAdding={cancelAdd}  
+                />
               </>
             ) : deleting ? (
               <>
-              <h2>Delete Movie</h2>
-              <DeleteMovie
-              deleteById={deleteById}
-              currentMovie={currentMovie}
-              setDeleting={setDeleting}
-              />
+                <br/>
+                <h1 className='display-4'>Delete Movie</h1>
+                <DeleteMovie
+                deleteById={deleteById}
+                currentMovie={currentMovie}
+                setDeleting={setDeleting}
+                />
               </>
             ) : (
               <>
-              <div className="col">
-                <h2>All Movies</h2>
-                  <MovieTable2 movies={movies} editRow={editRow} deleteRow={deleteRow} addRow={addRow}
-                />
-                </div>
+                <br/>
+                <h1 className="display-4">Marvel Movies</h1>
+                <br/> 
+                <div className="col">
+                    <MovieTable2 movies={movies} editRow={editRow} deleteRow={deleteRow} addRow={addRow}
+                  />
+                  </div>
                 </>
             )}
           </div>

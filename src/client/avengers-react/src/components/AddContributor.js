@@ -8,29 +8,26 @@ const AddContributor = props => {
         role: '', 
         idPerson: null, 
         person: {
-          idPerson: null, 
-          name: ''
+            idPerson: null, 
+            name: ''
         },
     };
 
         const [ contributor, setContributor ] = useState(intialFormState);
+        const [role, setRole] =useState();
+        const [name, setName]=useState();
 
         const history = useHistory();
-
-        const handleInputChange = event => {
-            const { name, value } = event.target;
-            setContributor({...contributor, [name]: value});
-        }
 
         const add = (event) => {
             event.preventDefault();
             const moviePerson = {
                 idMovie: 0, 
-                role: null, 
+                role: {role}, 
                 idPerson: 0, 
                 person: {
                   idPerson: 0, 
-                  name: null
+                  name: {name}
                 },
             };
 
@@ -43,7 +40,7 @@ const AddContributor = props => {
                 body: JSON.stringify(moviePerson)
             };
 
-            fetch("http://localhost:8080/api/movie", init)
+            fetch("http://localhost:8080/api/movie_person", init)
             .then(response => {
                 if (response.status !== 201){
                     return Promise.reject("Response is Not 200 OK.");
@@ -62,8 +59,8 @@ const AddContributor = props => {
                     type="text"
                     class="form-control"
                     name="role"
-                    value={contributor.role}
-                    onChange={handleInputChange}
+                    value={role}
+                    onChange={(event) => setRole(event.target.value)}
                     placeholder="role"
                     required/>
                 <br/>
@@ -72,8 +69,8 @@ const AddContributor = props => {
                     type="text"
                     class="form-control"
                     name="name"
-                    value={contributor.person.name}
-                    onChange={handleInputChange}
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
                     placeholder="name"
                     required/>
                 <br/>    

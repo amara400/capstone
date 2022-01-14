@@ -111,6 +111,7 @@ const EditMovie = () => {
         };
         fetch(`http://localhost:8080/api/movie/${editedMovie.idMovie}`, init)
             .then(response => {
+                console.log(response);
                 if (response.status === 204){
                     return null;
                 } else if (response.status === 400){
@@ -127,7 +128,8 @@ const EditMovie = () => {
     }
     return(
         <>
-        <h2 className="my-4">Edit Movie</h2>
+        <br/>
+        <h2 className="display-4">Edit Movie</h2>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
             <label htmlFor="title">Movie Title: </label>
@@ -274,11 +276,11 @@ const EditMovie = () => {
             <br/>
 
             <div className="mt-5">
-                <button className="btn btn-success"
+                <button className="btn btn-primary"
                     type="submit">
                     <i className="bi bi-save"></i>Edit Movies
                 </button>
-                <Link to="/movies" className="btn btn-warning ml-2">
+                <Link to="/movies" className="btn btn-danger ml-2">
                     <i className="bi bi-x"></i>Cancel
                 </Link>
             </div>

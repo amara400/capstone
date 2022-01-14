@@ -69,6 +69,7 @@ const AddMovie = props => {
 
         return(
             <form onSubmit={add} className="form-inline mx-2 my-4">
+                <h1 className='display-4'>Add Movie</h1>
                 <label>Movie Title</label>
                 <input
                     type="text"
@@ -190,7 +191,9 @@ const AddMovie = props => {
                     required/>
                 <br/>
                 <button className="btn btn-primary">Add New Movie</button>
-                <button className="btn btn-danger" onClick={() => props.setAdding(false)}>Cancel</button>
+                <Link to="/movies" className="btn btn-danger ml-2">
+                    <i className="bi bi-x"></i>Cancel
+                </Link>
             </form>
         )
 }

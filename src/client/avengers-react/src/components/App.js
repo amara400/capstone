@@ -25,6 +25,15 @@ function App(){
   console.log("AuthContext");
   console.log(AuthContext);
 
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if(token){
+      setUserStatus({user: jwtDecode(token)});
+    }
+    
+
+
+  }, [])
 
   return(
     <div className='container'>
@@ -33,11 +42,15 @@ function App(){
       <Header />
       <Switch>
         <Route exact path="/">
+          {userStatus?.user ? <Redirect to="/movies" /> : <Redirect to="/home"/>}
+          
+        </Route>
+        <Route path="/home">
           <Home />
         </Route>
 
         <Route path="/login">
-          {userStatus?.user ? <Redirect to="/" /> : <Login />}
+          {userStatus?.user ? <Redirect to="/movies" /> : <Login />}
         </Route>
 
         <Route path="/about">

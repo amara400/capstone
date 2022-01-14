@@ -3,11 +3,11 @@ import DeleteContributor from "./DeleteContributor";
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import AddContributor from './AddContributor';
-import ContributorsTable from './ContributorsTable';
+import ContributorsTableNoCRUD from './ContributorsTableNoCRUD';
 import { Link, useHistory, useParams } from 'react-router-dom';
 
 
-function Contributors(){
+function ContributorsData(){
 
   const intialFormState = {
     idMovie: null, 
@@ -18,9 +18,6 @@ function Contributors(){
       name: ''
     },
   };
-  const dataMovie = {idMovie: 1, title: 'Safe', usReleaseDate: 'Hoops', runtime: 'Haven', imdbRating: '1998-09-19', metascore: '69', budget: '69', domesticGross: '69', totalGross: '69', openingGross: '69', oscarNominations: '69', oscarsWon: '69', franchise: '69'};
-  
-  const [movie, setMovie] = useState(dataMovie);
   const [ contributors, setContributors ] = useState([]);
 
   const [ currentContributor, setCurrentContributor ] = useState(intialFormState);
@@ -28,22 +25,6 @@ function Contributors(){
   const [ deleting, setDeleting ] = useState(false)
   const { idMovie } = useParams();
   
-  useEffect(() => {
-    fetch(`http://localhost:8080/api/movie/${idMovie}`)
-        .then(response => {
-            if (response.status === 404){
-                return Promise.reject(`Received 404 - Not Found for Movie ID: ${idMovie}`);
-            }
-            return response.json();
-        })
-        .then(movie => {
-            setMovie(movie);
-        }
-        )
-        .catch(error => {
-            console.log(error);
-        });
-}, [idMovie]);
   
   useEffect(() => {
     fetch(`http://localhost:8080/api/movie_person/${idMovie}`)
@@ -125,20 +106,14 @@ function Contributors(){
     return (
       <>
       <div className="container">
-        <br/>
-        <h1 className='display-6'><u>{movie.title}</u> Contributors</h1>
         <div className="row">
-              <>
               <div className="col">
-                <h2></h2>
-                  <ContributorsTable contributors={contributors} deleteRow={deleteRow} addRow={addRow}
-                />
+                  <ContributorsTableNoCRUD contributors={contributors}/>
                 </div>
-                </>
         </div>
       </div>
       </>
     );
     
 }
-  export default Contributors;
+  export default ContributorsData;
