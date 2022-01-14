@@ -79,13 +79,13 @@ export default function Login(){
                 <div>
                     <label htmlFor="password">Password:</label>
                     <input
-                        type="text"
+                        type="password"
                         onChange={(event) => setPassword(event.target.value)}
                         id="password"
                     />
                 </div>
                 <div>
-                    <button type="submit">Login</button>
+                    <button className="btn btn-primary" type="submit">Login!!</button>
                 </div>
             </form>
             
